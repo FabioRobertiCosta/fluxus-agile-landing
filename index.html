@@ -35,7 +35,8 @@
             fluxusLightBg: '#f5f7fb',
             cyberCyan: '#06b6d4',
             cyberBlue: '#3b82f6',
-            goGreen: '#10b981'
+            goGreen: '#10b981',
+            rhIndigo: '#6366f1'
           }
         }
       }
@@ -86,16 +87,19 @@
       </a>
 
       <!-- NAVEGAÇÃO DESKTOP -->
-      <nav class="hidden lg:flex items-center gap-8" id="nav-menu" aria-label="Menu principal">
-        <a href="#proposta" class="font-black text-lg uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">O Problema</a>
-        <a href="#pilares" class="font-black text-lg uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Soluções</a>
-        <a href="#sobre-mim" class="font-black text-lg uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Quem Somos</a>
-        <a href="#scrum-it" class="font-black text-lg uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Scrum It!</a>
-        <a href="#roi" class="font-black text-lg uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Investimento</a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8" id="nav-menu" aria-label="Menu principal">
+        <a href="#proposta" class="font-black text-base uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">O Problema</a>
+        <a href="#pilares" class="font-black text-base uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Soluções</a>
+        <a href="#sobre-mim" class="font-black text-base uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Quem Somos</a>
+        <a href="#scrum-it" class="font-black text-base uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Scrum It!</a>
+        <a href="#roi" class="font-black text-base uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Investimento</a>
         
-        <!-- LINK DIRETO PARA O FLUXUS GO -->
-        <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" class="font-black text-sm uppercase tracking-wider px-5 py-3 bg-goGreen/10 border-2 border-goGreen text-goGreen rounded-full hover:bg-goGreen hover:text-black transition shadow-md">
-          ⚡ Fluxus Go (R$ 149/mês)
+        <!-- LINKS PARA MÓDULOS -->
+        <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" class="font-black text-xs uppercase tracking-wider px-4 py-2.5 bg-goGreen/10 border-2 border-goGreen text-goGreen rounded-full hover:bg-goGreen hover:text-black transition shadow-md">
+          ⚡ Fluxus Go
+        </a>
+        <a href="https://fabioroberticosta.github.io/fluxus-rh-landing/" target="_blank" rel="noopener" class="font-black text-xs uppercase tracking-wider px-4 py-2.5 bg-rhIndigo/10 border-2 border-rhIndigo text-rhIndigo rounded-full hover:bg-rhIndigo hover:text-white transition shadow-md">
+          👥 Fluxus RH
         </a>
       </nav>
 
@@ -119,7 +123,8 @@
       <a href="#sobre-mim" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">Quem Somos (Fabio)</a>
       <a href="#scrum-it" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">Plataforma Scrum It!</a>
       <a href="#roi" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">O Investimento</a>
-      <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" class="block font-black text-xl uppercase tracking-wide py-3 text-goGreen">⚡ Fluxus Go (R$ 149/mês)</a>
+      <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-goGreen">⚡ Fluxus Go (Profissionais Liberais)</a>
+      <a href="https://fabioroberticosta.github.io/fluxus-rh-landing/" target="_blank" rel="noopener" class="block font-black text-xl uppercase tracking-wide py-3 text-rhIndigo">👥 Fluxus RH (Gestão de Pessoas e Onboarding)</a>
       <a href="#setup" class="block font-black text-xl uppercase tracking-wide py-3 text-fluxusAccent">Falar com Diretor</a>
     </div>
   </header>
@@ -149,12 +154,19 @@
             </p>
           </div>
           
-          <div class="flex flex-wrap gap-6 pt-2">
-            <a href="#setup" class="btn-cyber-glow hover:shadow-[0_0_35px_rgba(6,182,212,0.7)] hover:scale-[1.03] duration-300 px-12 py-6 text-slate-950 font-black text-lg uppercase tracking-wider rounded-full shadow-2xl text-center w-full sm:w-auto">
+          <div class="flex flex-col sm:flex-row items-center gap-5 pt-4">
+            <a href="https://wa.me/5512982827603?text=Olá,%20Fabio!%20Gostaria%20de%20agendar%20uma%20consultoria%20estratégica%20com%20o%20CTO." 
+               target="_blank" 
+               rel="noopener" 
+               class="btn-cyber-glow hover:shadow-[0_0_35px_rgba(6,182,212,0.7)] hover:scale-[1.03] duration-300 px-10 py-5 text-slate-950 font-black text-base uppercase tracking-wider rounded-full shadow-2xl text-center w-full sm:w-auto">
               Agendar Consultoria CTO
             </a>
-            <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" class="px-12 py-6 bg-slate-900 text-goGreen font-black text-lg uppercase tracking-wider rounded-full border-2 border-goGreen hover:bg-goGreen hover:text-black transition text-center w-full sm:w-auto">
-              Ver Planos Fluxus Go ⚡
+
+            <a href="https://wa.me/5512982827603?text=Olá!%20Vim%20pelo%20site%20da%20Fluxus%20Agile%20e%20quero%20testar%20a%20demonstração%20do%20robô%20de%20IA." 
+               target="_blank" 
+               rel="noopener" 
+               class="px-10 py-5 bg-slate-900/90 text-goGreen font-black text-base uppercase tracking-wider rounded-full border-2 border-goGreen hover:bg-goGreen hover:text-black transition duration-300 text-center w-full sm:w-auto shadow-lg">
+              Testar Demo no Zap ⚡
             </a>
           </div>
         </div>
@@ -207,15 +219,16 @@
       </div>
     </section>
 
-    <!-- 3. SECTION NOSSOS SERVIÇOS -->
+    <!-- 3. SECTION NOSSOS SERVIÇOS E MÓDULOS -->
     <section id="pilares" class="py-24 md:py-32 bg-slate-100 dark:bg-[#080f1e] border-t-2 border-slate-800">
       <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
         <div class="text-center mb-16 md:mb-24">
-          <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-4">Soluções Corporativas</p>
+          <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-4">Soluções Corporativas & Ecossistema</p>
           <h2 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.1] uppercase tracking-wide text-fluxusNavy dark:text-white">Nossos pilares estratégicos para a escala do seu negócio</h2>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Pilar 01 -->
           <a href="#setup-wa" class="p-10 bg-white dark:bg-slate-900 border-2 border-fluxusAccent rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group">
             <div>
               <span class="font-black text-fluxusAccent tracking-widest text-4xl block mb-6">01</span>
@@ -229,6 +242,7 @@
             </div>
           </a>
           
+          <!-- Pilar 02 -->
           <a href="#setup-lp" class="p-10 bg-white dark:bg-slate-900 border-2 border-fluxusAccent rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group">
             <div>
               <span class="font-black text-fluxusAccent tracking-widest text-4xl block mb-6">02</span>
@@ -242,6 +256,7 @@
             </div>
           </a>
 
+          <!-- Pilar 03 -->
           <a href="#setup-sys" class="p-10 bg-white dark:bg-slate-900 border-2 border-fluxusAccent rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group">
             <div>
               <span class="font-black text-fluxusAccent tracking-widest text-4xl block mb-6">03</span>
@@ -254,22 +269,57 @@
               Ecossistema de Alta Performance
             </div>
           </a>
+        </div>
 
+        <!-- MÓDULOS DE PRODUTOS PRONTOS (FLUXUS GO & FLUXUS RH) -->
+        <div class="grid sm:grid-cols-2 gap-8">
+          <!-- Card Fluxus Go -->
           <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" class="p-10 bg-[#0b1322] border-4 border-goGreen rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-goGreen text-black text-[10px] font-black uppercase px-4 py-1 rounded-bl-xl tracking-widest">Ativação Rápida</div>
+            <div class="absolute top-0 right-0 bg-goGreen text-black text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-widest">Ativação Rápida</div>
             <div>
-              <span class="font-black text-goGreen tracking-widest text-4xl block mb-6">⚡ GO</span>
-              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-goGreen transition-colors">Fluxus Go (Planos Rápidos)</h3>
-              <p class="text-slate-300 text-base leading-relaxed">
-                Precisa de um robô de WhatsApp + Agenda integrada funcionando em até 5 dias? Planos prontos para autônomos e comércios.
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-black text-goGreen tracking-widest text-4xl">⚡ GO</span>
+              </div>
+              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-goGreen transition-colors">Fluxus Go (Atendimento & Agendas)</h3>
+              <p class="text-slate-300 text-base leading-relaxed mb-6">
+                Robô de WhatsApp + Agenda Integrada em tempo real para profissionais liberais, clínicas e pequenos comércios.
               </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li>✓ Resposta instantânea de orçamentos e horários</li>
+                <li>✓ Sincronização automática com Google Calendar</li>
+                <li>✓ Ativação simplificada em até 5 dias úteis</li>
+              </ul>
             </div>
             <div class="mt-8 pt-4 border-t border-slate-800 text-xs font-black uppercase text-goGreen tracking-wider flex items-center justify-between">
               <span>A partir de R$ 149/mês</span>
-              <span>Acessar ➔</span>
+              <span>Acessar Módulo ➔</span>
+            </div>
+          </a>
+
+          <!-- Card Fluxus RH -->
+          <a href="https://fabioroberticosta.github.io/fluxus-rh-landing/" target="_blank" rel="noopener" class="p-10 bg-[#0b1322] border-4 border-rhIndigo rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-rhIndigo text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-widest">Gestão de Pessoas</div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-black text-rhIndigo tracking-widest text-4xl">👥 RH</span>
+              </div>
+              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-rhIndigo transition-colors">Fluxus RH (Triagem & Onboarding)</h3>
+              <p class="text-slate-300 text-base leading-relaxed mb-6">
+                Triagem automatizada via WhatsApp, onboarding interativo no celular e SAC interno para colaboradores em empresas enxutas.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li>✓ Filtro e pré-qualificação de candidatos em segundos</li>
+                <li>✓ Treinamento e integração entregues no WhatsApp</li>
+                <li>✓ Centralização de dúvidas e redução do retrabalho</li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-800 text-xs font-black uppercase text-rhIndigo tracking-wider flex items-center justify-between">
+              <span>Evite o Retrabalho</span>
+              <span>Acessar Módulo ➔</span>
             </div>
           </a>
         </div>
+
       </div>
     </section>
 
