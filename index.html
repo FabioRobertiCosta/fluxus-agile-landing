@@ -509,21 +509,86 @@
     </div>
   </div>
 
-  <!-- RODAPÉ -->
-  <footer class="w-full bg-[#07111f] text-slate-400 py-12 text-center text-sm font-bold border-t-2 border-slate-800">
-    <div class="w-full max-w-[1720px] mx-auto px-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 overflow-hidden rounded-lg bg-black border border-slate-700">
-          <img src="src/images/favicon-fluxus.jpg" alt="Logo Fluxus" class="w-full h-full object-cover" />
+  <!-- RODAPÉ CORPORATIVO (PADRÃO FLUXUS RH - 3 COLUNAS) -->
+  <footer class="w-full bg-[#050b14] text-slate-300 border-t-2 border-slate-800 pt-16 pb-8 transition-colors duration-300">
+    <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+      
+      <!-- GRID DE 3 COLUNAS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 pb-12 border-b border-slate-800/80">
+        
+        <!-- COLUNA 1: LOGO E DESCRIÇÃO INSTITUCIONAL -->
+        <div class="space-y-6">
+          <a href="#hero" class="flex items-center gap-4 shrink-0" aria-label="Fluxus Agile - Início">
+            <div class="w-12 h-12 overflow-hidden rounded-xl flex items-center justify-center bg-black border-2 border-slate-700 shadow-md">
+              <img src="src/images/favicon-fluxus.jpg" alt="Logo Fluxus" class="w-full h-full object-cover scale-110" onerror="this.src='src/images/favicon-fluxus.jpg';" />
+            </div>
+            <span class="font-black text-2xl tracking-tight text-white uppercase">
+              FLUXUS <span class="text-fluxusAccent font-extrabold">AGILE</span>
+            </span>
+          </a>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-md font-medium">
+            Inteligência Artificial, Sistemas Sob Medida e Engenharia de Processos focados em escalar operações de empresas enxutas e otimizar resultados.
+          </p>
         </div>
-        <span class="text-white font-black uppercase text-base">Fluxus Agile</span>
+
+        <!-- COLUNA 2: CANAIS DE ATENDIMENTO OFICIAL -->
+        <div class="space-y-6">
+          <h3 class="font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-fluxusAccent">
+            Canais de Atendimento
+          </h3>
+          <ul class="space-y-4 text-sm sm:text-base font-medium">
+            <li>
+              <a href="tel:+551236006887" class="flex items-center gap-3 text-slate-300 hover:text-fluxusAccent transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">📞</span>
+                <span><strong class="text-slate-400 font-semibold text-xs block uppercase">Telefone:</strong> +55 (12) 3600-6887</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/5512982827603?text=Olá!%20Vim%20pelo%20site%20da%20Fluxus%20Agile." target="_blank" rel="noopener" class="flex items-center gap-3 text-slate-300 hover:text-goGreen transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">💬</span>
+                <span><strong class="text-slate-400 font-semibold text-xs block uppercase">WhatsApp:</strong> +55 (12) 98282-7603</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:sm.fabio.roberticosta@gmail.com" class="flex items-center gap-3 text-slate-300 hover:text-fluxusAccent transition-colors group">
+                <span class="text-lg group-hover:scale-110 transition-transform">✉️</span>
+                <span><strong class="text-slate-400 font-semibold text-xs block uppercase">E-mail:</strong> sm.fabio.roberticosta@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUNA 3: LIDERANÇA TÉCNICA -->
+        <div class="space-y-6">
+          <h3 class="font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-fluxusAccent">
+            Liderança Técnica
+          </h3>
+          <div class="p-6 bg-[#0a1526] border border-slate-800 rounded-2xl space-y-3 shadow-inner">
+            <div class="space-y-1">
+              <span class="font-black text-lg text-white block">Fabio Roberti Costa</span>
+              <span class="font-extrabold text-xs tracking-wider text-fluxusAccent uppercase block">
+                Chief Technology Officer (CTO)
+              </span>
+            </div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest pt-2 border-t border-slate-800/80">
+              Agile Solutions Architect & Scrum Master
+            </p>
+          </div>
+        </div>
+
       </div>
-      <div class="text-xs text-slate-400">
-        <span>📞 WhatsApp: +55 (12) 98282-7603</span> | 
-        <span>✉️ E-mail: sm.fabio.roberticosta@gmail.com</span>
+
+      <!-- RODAPÉ INFERIOR (COPYRIGHT E DIREITOS) -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-500 text-center sm:text-left">
+        <p>
+          &copy; 2026 Fluxus Agile. Todos os direitos reservados.
+        </p>
+        <p class="text-slate-400 font-medium">
+          Inteligência Artificial, Sistemas sob Medida & Engenharia de Processos.
+        </p>
       </div>
+
     </div>
-    <p>&copy; 2026 Fluxus Agile. Inteligência Artificial, Sistemas sob Medida & Engenharia de Processos.</p>
   </footer>
 
   <!-- ARQUIVO DE INTERATIVIDADE -->
