@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fluxus Agile implementa Agentes de IA para WhatsApp, Landing Pages de Alta Performance e Sistemas sob Medida integrados para impulsionar faturamento e escala operacional." />
+  
+  <!-- Favicon Oficial -->
+  <link rel="shortcut icon" href="src/images/favicon-fluxus.jpg" type="image/jpeg" />
+  <link rel="icon" href="src/images/favicon-fluxus.jpg" type="image/jpeg" />
+  
+  <title>Fluxus Agile | Transformamos o caos em boas memórias</title>
+  
+  <!-- Fontes Modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            fluxusNavy: '#0a1b2e',
+            fluxusNavyLight: '#102a43',
+            fluxusAccent: '#f89400',
+            fluxusAccentHover: '#d47e00',
+            fluxusLightBg: '#f5f7fb',
+            cyberCyan: '#06b6d4',
+            cyberBlue: '#3b82f6',
+            goGreen: '#10b981',
+            rhIndigo: '#6366f1'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .fade-in-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+    
+    .btn-cyber-glow {
+      background: linear-gradient(135deg, #f89400 0%, #ffcc33 50%, #06b6d4 100%);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-cyber-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: all 0.6s;
+    }
+    .btn-cyber-glow:hover::before {
+      left: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-[#050a12] dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- ACESSIBILIDADE DE TOPO -->
+  <a class="absolute left-[-999px] top-3 bg-fluxusAccent text-slate-950 p-3 z-[9999] rounded-lg font-black focus:left-3 outline-none" href="#main-content">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- CABEÇALHO DA PÁGINA (MENU LIMPO SEM BOTÕES SOLTOS) -->
+  <header id="header" class="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#050a12]/95 backdrop-blur-md border-b-2 border-slate-200 dark:border-slate-800 transition-colors" aria-label="Cabeçalho principal">
+    <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 h-24 flex items-center justify-between gap-4">
+      
+      <!-- LOGO OFICIAL FLUXUS AGILE -->
+      <a href="#hero" class="flex items-center gap-4 shrink-0" aria-label="Fluxus Agile - Início">
+        <div class="w-12 h-12 overflow-hidden rounded-xl flex items-center justify-center bg-black border-2 border-slate-700 shadow-md">
+          <img src="src/images/favicon-fluxus.jpg" alt="Logo Fluxus" class="w-full h-full object-cover scale-110" />
+        </div>
+        <span class="font-black text-2xl tracking-tight text-fluxusNavy dark:text-white uppercase">Fluxus <span class="text-fluxusAccent">Agile</span></span>
+      </a>
+
+      <!-- NAVEGAÇÃO DESKTOP LIMPA -->
+      <nav class="hidden lg:flex items-center gap-8" id="nav-menu" aria-label="Menu principal">
+        <a href="#proposta" class="font-black text-sm uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">O Problema</a>
+        <a href="#pilares" class="font-black text-sm uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Soluções</a>
+        <a href="#modulos-ecossistema" class="font-black text-sm uppercase tracking-wider text-fluxusAccent hover:underline transition">Módulos Verticais</a>
+        <a href="#sobre-mim" class="font-black text-sm uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Quem Somos</a>
+        <a href="#scrum-it" class="font-black text-sm uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Scrum It!</a>
+        <a href="#roi" class="font-black text-sm uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:text-fluxusAccent transition">Investimento</a>
+      </nav>
+
+      <!-- CONTROLES -->
+      <div class="flex items-center gap-3">
+        <button id="dark-mode-toggle" type="button" aria-label="Alternar modo claro ou escuro" 
+                class="w-12 h-12 flex items-center justify-center text-2xl hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition">
+          ☀️
+        </button>
+        <button id="hamburger-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" 
+                class="lg:hidden w-12 h-12 flex items-center justify-center text-3xl text-slate-900 dark:text-white">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050a12] px-8 py-8 space-y-4 shadow-2xl">
+      <a href="#proposta" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">O Problema</a>
+      <a href="#pilares" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">Nossos Serviços</a>
+      <a href="#modulos-ecossistema" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-fluxusAccent">Módulos Verticais</a>
+      <a href="#sobre-mim" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">Quem Somos (Fabio)</a>
+      <a href="#scrum-it" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">Plataforma Scrum It!</a>
+      <a href="#roi" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-100 dark:border-slate-800 text-white">O Investimento</a>
+      <a href="#setup" class="block font-black text-xl uppercase tracking-wide py-3 text-fluxusAccent">Falar com Diretor</a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="main-content">
+    
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="w-full flex flex-col justify-center pt-14 pb-20 lg:pt-24 lg:pb-28 bg-slate-50 dark:bg-[#050a12] overflow-hidden">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center mb-14 lg:mb-20 space-y-6 fade-in-up visible">
+        <p class="font-black text-xl sm:text-2xl lg:text-3xl uppercase tracking-[0.25em] text-fluxusAccent">
+          Transformamos o caos em boas memórias
+        </p>
+        <h1 class="font-serif font-black text-5xl sm:text-7xl lg:text-8xl leading-[1.1] text-fluxusNavy dark:text-white uppercase tracking-wide">
+          O seu cliente não vai esperar
+        </h1>
+      </div>
+
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="flex flex-col justify-center space-y-10 text-left fade-in-up visible">
+          <div class="space-y-6">
+            <h2 class="font-serif font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wide leading-none text-transparent bg-clip-text bg-gradient-to-r from-fluxusAccent via-[#ffcc33] to-cyberCyan">
+              A IA responde em 2 segundos
+            </h2>
+            <p class="text-slate-700 dark:text-slate-200 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
+              Elimine de vez as falhas e a perda de oportunidades comerciais. Substitua a lentidão humana por Agentes de Inteligência Artificial nativos que atendem e resolvem as necessidades dos seus leads 24h por dia, sem fricção ou interrupções.
+            </p>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row items-center gap-5 pt-4">
+            <a href="https://wa.me/551236006887?text=Olá,%20Fabio!%20Gostaria%20de%20agendar%20uma%20consultoria%20estratégica%20com%20o%20CTO." 
+               target="_blank" 
+               rel="noopener" 
+               class="btn-cyber-glow hover:shadow-[0_0_35px_rgba(6,182,212,0.7)] hover:scale-[1.03] duration-300 px-10 py-5 text-slate-950 font-black text-base uppercase tracking-wider rounded-full shadow-2xl text-center w-full sm:w-auto">
+              Agendar Consultoria CTO
+            </a>
+
+            <a href="https://wa.me/551236006887?text=Olá!%20Vim%20pelo%20site%20da%20Fluxus%20Agile%20e%20quero%20testar%20a%20demonstração%20do%20robô%20de%20IA." 
+               target="_blank" 
+               rel="noopener" 
+               class="px-10 py-5 bg-slate-900/90 text-goGreen font-black text-base uppercase tracking-wider rounded-full border-2 border-goGreen hover:bg-goGreen hover:text-black transition duration-300 text-center w-full sm:w-auto shadow-lg">
+              Testar Demo no Zap ⚡
+            </a>
+          </div>
+        </div>
+
+        <aside class="w-full bg-white dark:bg-slate-900 rounded-[36px] shadow-2xl overflow-hidden fade-in-up visible flex flex-col justify-between border-2 border-slate-200 dark:border-slate-800">
+          <div class="w-full relative overflow-hidden aspect-[4/3] bg-slate-900 flex items-center justify-center">
+            <img src="src/images/wa-hero-dashboard.jpg" alt="Interface inteligente mostrando o robô conectado ao WhatsApp" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.src='src/images/favicon-fluxus.jpg'; this.className='w-40 h-40 object-contain opacity-50';" />
+          </div>
+          <div class="grid grid-cols-3 text-center border-t-2 border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+            <div class="p-6 border-r-2 border-slate-200 dark:border-slate-800">
+              <strong class="block text-3xl lg:text-4xl font-black text-fluxusAccent">&lt; 2s</strong>
+              <span class="text-xs font-black text-slate-500 uppercase tracking-wider">Resposta</span>
+            </div>
+            <div class="p-6 border-r-2 border-slate-200 dark:border-slate-800">
+              <strong class="block text-3xl lg:text-4xl font-black text-fluxusAccent">24/7</strong>
+              <span class="text-xs font-black text-slate-500 uppercase tracking-wider">Ativo</span>
+            </div>
+            <div class="p-6">
+              <strong class="block text-3xl lg:text-4xl font-black text-fluxusAccent">100%</strong>
+              <span class="text-xs font-black text-slate-500 uppercase tracking-wider">Automático</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 2. SECTION O PROBLEMA -->
+    <section id="proposta" class="pt-20 pb-24 md:pb-32 bg-gradient-to-br from-[#0a1b2e] to-[#102a43] text-white overflow-hidden border-t-2 border-slate-800">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center mb-16 md:mb-24">
+        <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-4">O Custo Oculto</p>
+        <h2 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.1] uppercase tracking-wide text-white">A demora no WhatsApp mata o faturamento</h2>
+      </div>
+
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="flex flex-col justify-center space-y-8 text-left fade-in-up">
+          <p class="text-fluxusAccent text-2xl sm:text-3xl lg:text-4xl leading-relaxed font-black uppercase tracking-tight">
+            Cada minuto de lentidão é um cliente a menos no seu caixa.
+          </p>
+          <p class="text-slate-200 text-lg sm:text-xl leading-relaxed">
+            Seus futuros clientes estão decidindo compras agora. Quando eles enviam mensagens à noite, no almoço ou durante o fim de semana e não encontram uma resposta instantânea, a intenção de compra desaparece em minutos. A concorrência ágil ficará com a receita que deveria ser sua.
+          </p>
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+            Sua equipe comercial está sobrecarregada, consumindo horas preciosas do dia filtrando curiosos e repetindo as mesmas respostas genéricas. Isso infla o seu Custo de Aquisição de Clientes (CAC) e congela o crescimento do seu negócio.
+          </p>
+        </div>
+        
+        <div class="rounded-[36px] overflow-hidden shadow-2xl border-2 border-slate-700 aspect-[4/3] w-full relative fade-in-up">
+          <img src="src/images/custo-oculto.jpg" alt="Gráficos e comparativos de gargalo operacional e faturamento" class="absolute inset-0 w-full h-full object-cover object-center" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECTION NOSSOS SERVIÇOS -->
+    <section id="pilares" class="py-24 md:py-32 bg-slate-100 dark:bg-[#080f1e] border-t-2 border-slate-800">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+        <div class="text-center mb-16 md:mb-24">
+          <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-4">Soluções Corporativas</p>
+          <h2 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.1] uppercase tracking-wide text-fluxusNavy dark:text-white">Nossos pilares estratégicos para a escala do seu negócio</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Pilar 01 -->
+          <a href="https://wa.me/551236006887?text=Olá,%20Fabio!%20Gostaria%20de%20saber%20mais%20sobre%20Agentes%20de%20IA%20no%20WhatsApp." target="_blank" rel="noopener" class="p-10 bg-white dark:bg-slate-900 border-2 border-fluxusAccent rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group">
+            <div>
+              <span class="font-black text-fluxusAccent tracking-widest text-4xl block mb-6">01</span>
+              <h3 class="font-black text-2xl text-fluxusNavy dark:text-white mb-4 uppercase tracking-tight group-hover:text-fluxusAccent transition-colors">Agentes de IA no WhatsApp</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                Integração inteligente com modelos avançados para responder dúvidas recorrentes, qualificar leads e agilizar o primeiro contato de forma contínua.
+              </p>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-black uppercase text-fluxusAccent tracking-wider">
+              Automação Comercial Absoluta
+            </div>
+          </a>
+          
+          <!-- Pilar 02 -->
+          <a href="https://wa.me/551236006887?text=Olá,%20Fabio!%20Gostaria%20de%20saber%20mais%20sobre%20Landing%20Pages%20de%20Conversão." target="_blank" rel="noopener" class="p-10 bg-white dark:bg-slate-900 border-2 border-fluxusAccent rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group">
+            <div>
+              <span class="font-black text-fluxusAccent tracking-widest text-4xl block mb-6">02</span>
+              <h3 class="font-black text-2xl text-fluxusNavy dark:text-white mb-4 uppercase tracking-tight group-hover:text-fluxusAccent transition-colors">Landing Pages de Conversão</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                Desenvolvimento de páginas de destino ultravelozes, limpas e focadas na real necessidade do usuário, gerando retenção imediata.
+              </p>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-black uppercase text-fluxusAccent tracking-wider">
+              Posicionamento Digital Rígido
+            </div>
+          </a>
+
+          <!-- Pilar 03 -->
+          <a href="https://wa.me/551236006887?text=Olá,%20Fabio!%20Gostaria%20de%20saber%20mais%20sobre%20Sistemas%20Sob%20Medida." target="_blank" rel="noopener" class="p-10 bg-white dark:bg-slate-900 border-2 border-fluxusAccent rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 fade-in-up flex flex-col justify-between group">
+            <div>
+              <span class="font-black text-fluxusAccent tracking-widest text-4xl block mb-6">03</span>
+              <h3 class="font-black text-2xl text-fluxusNavy dark:text-white mb-4 uppercase tracking-tight group-hover:text-fluxusAccent transition-colors">Sistemas Sob Medida</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                Engenharia customizada para criar painéis gerenciais, CRMs internos e agendas automáticas conectadas de forma segura.
+              </p>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-black uppercase text-fluxusAccent tracking-wider">
+              Ecossistema de Alta Performance
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO DOS MÓDULOS VERTICAIS (4 CARDS 100% CLICÁVEIS NA ORDEM SOLICITADA) -->
+    <section id="modulos-ecossistema" class="py-24 bg-[#050a12] border-t-2 border-slate-800">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+        
+        <div class="text-center mb-16">
+          <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-3">Módulos de Ativação Rápida</p>
+          <h2 class="font-serif font-black text-4xl sm:text-6xl uppercase tracking-wide text-white">Soluções Prontas por Mercado</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- CARD 1: GO (Comércio) -->
+          <a href="https://fabioroberticosta.github.io/fluxus-go-landing/" target="_blank" rel="noopener" 
+             class="p-8 bg-[#0b1322] border-4 border-goGreen rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-goGreen text-black text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-widest">
+              Comércio / Serviços
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-black text-goGreen tracking-widest text-4xl">⚡ GO</span>
+              </div>
+              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-goGreen transition-colors">
+                FLUXUS GO
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Robô de WhatsApp + Agenda Integrada em tempo real para profissionais liberais, clínicas e pequenos comércios.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li>✓ Resposta instantânea de orçamentos e horários</li>
+                <li>✓ Sincronização automática com Google Calendar</li>
+                <li>✓ Ativação simplificada em até 5 dias úteis</li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-800 text-xs font-black uppercase text-goGreen tracking-wider flex items-center justify-between">
+              <span>A partir de R$ 149/mês</span>
+              <span>Acessar Módulo ➔</span>
+            </div>
+          </a>
+
+          <!-- CARD 2: A&B (Alimentos & Bebidas) -->
+          <a href="https://fabioroberticosta.github.io/fluxus-ab-landing/" target="_blank" rel="noopener" 
+             class="p-8 bg-[#0b1322] border-4 border-amber-500 rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-amber-500 text-black text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-widest">
+              Gastronomia & Bares
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-black text-amber-500 tracking-widest text-4xl">🍷 A&B</span>
+              </div>
+              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-amber-500 transition-colors">
+                FLUXUS A&B
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Triagem rápida de garçons/cozinheiros, onboarding de higiene/Anvisa e consulta interativa de Ficha Técnica no WhatsApp.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li>✓ Recrutamento express de salão e cozinha</li>
+                <li>✓ Consulta de Ficha Técnica e Alérgenos no Zap</li>
+                <li>✓ Padronização de atendimento ao cliente</li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-800 text-xs font-black uppercase text-amber-500 tracking-wider flex items-center justify-between">
+              <span>Ficha Técnica no Zap</span>
+              <span>Acessar Módulo ➔</span>
+            </div>
+          </a>
+
+          <!-- CARD 3: RH (Gestão de Pessoas) -->
+          <a href="https://fabioroberticosta.github.io/fluxus-rh-landing/" target="_blank" rel="noopener" 
+             class="p-8 bg-[#0b1322] border-4 border-rhIndigo rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-rhIndigo text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-widest">
+              Gestão de Pessoas
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-black text-rhIndigo tracking-widest text-4xl">👥 RH</span>
+              </div>
+              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-rhIndigo transition-colors">
+                FLUXUS RH
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Triagem automatizada via WhatsApp, onboarding interativo no celular e SAC interno para colaboradores em empresas enxutas.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li>✓ Filtro e pré-qualificação de candidatos</li>
+                <li>✓ Treinamento e integração entregues no WhatsApp</li>
+                <li>✓ Centralização de dúvidas sobre folha e escala</li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-800 text-xs font-black uppercase text-rhIndigo tracking-wider flex items-center justify-between">
+              <span>Evite o Retrabalho</span>
+              <span>Acessar Módulo ➔</span>
+            </div>
+          </a>
+
+          <!-- CARD 4: HOTEL (Hospitalidade) -->
+          <a href="https://fabioroberticosta.github.io/fluxus-hotel-landing/" target="_blank" rel="noopener" 
+             class="p-8 bg-[#0b1322] border-4 border-cyan-500 rounded-[36px] shadow-2xl hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-cyan-500 text-black text-[10px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-widest">
+              Hospitalidade
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-black text-cyan-400 tracking-widest text-4xl">🏨 HOTEL</span>
+              </div>
+              <h3 class="font-black text-2xl text-white mb-4 uppercase tracking-tight group-hover:text-cyan-400 transition-colors">
+                FLUXUS HOTEL
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Gestão de staff para hotéis e pousadas: triagem de camareiras/recepção, onboarding 5 estrelas e cobertura de escalas.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                <li>✓ Recrutamento para Governança e Recepção</li>
+                <li>✓ Onboarding em Padrão de Atendimento Hoteleiro</li>
+                <li>✓ Gestão e cobertura ágil de plantões</li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-800 text-xs font-black uppercase text-cyan-400 tracking-wider flex items-center justify-between">
+              <span>Padrão 5 Estrelas</span>
+              <span>Acessar Módulo ➔</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. QUEM SOMOS & LIDERANÇA TÉCNICA -->
+    <section id="sobre-mim" class="py-24 bg-[#060b13] border-y-2 border-slate-800 text-white">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent">Liderança & Visão de Futuro</p>
+            <h2 class="font-serif font-black text-4xl sm:text-5xl uppercase tracking-wide text-white leading-tight">
+              Liderança Operacional & Engenharia de Processos
+            </h2>
+            <p class="text-slate-200 text-xl leading-relaxed">
+              Fundada por <strong class="text-white">Fabio Roberti Costa (CTO, Certified Scrum Master & Executive Operations Leader)</strong>, a <strong class="text-fluxusAccent">Fluxus Agile</strong> une mais de 20 anos de governança em grandes operações globais (Yum! Brands, Burger King, Coppel) com o estado da arte em inteligência artificial e desenvolvimento ágil.
+            </p>
+            <p class="text-slate-300 text-lg leading-relaxed">
+              Com uma trajetória comprovada no controle de P&L, margens operacionais e otimização de fluxos contínuos (Lean & PDCA), Fabio atua diretamente na arquitetura estratégica dos projetos. Eliminamos gargalos burocráticos e entregamos soluções com total regularidade fiscal via <strong class="text-fluxusAccent font-black">Nota Fiscal Eletrônica de Serviços (NFSe)</strong>.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-8 text-base font-bold text-slate-200">
+              <span class="flex items-center gap-2 text-white">✓ Atendimento Direto do CTO</span>
+              <span class="flex items-center gap-2 text-white">✓ Certified Scrum Master (Scrum.org)</span>
+              <span class="flex items-center gap-2 text-white">✓ Emissão Oficial de NFSe</span>
+            </div>
+          </div>
+
+          <div class="bg-[#0b1322] border-2 border-slate-700 rounded-[36px] p-10 space-y-8 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-fluxusAccent/10 rounded-full blur-2xl"></div>
+            <h3 class="font-black text-3xl text-white uppercase tracking-tight">Garantias e Valores da Marca</h3>
+            <ul class="space-y-6 text-slate-200 text-lg">
+              <li class="flex items-start gap-4">
+                <span class="text-fluxusAccent text-2xl">🎯</span>
+                <div>
+                  <strong class="text-white block text-xl">Compromisso com o Go-Live</strong>
+                  Entregas validadas, integradas e sem surpresas no meio do percurso.
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-fluxusAccent text-2xl">⚡</span>
+                <div>
+                  <strong class="text-white block text-xl">Arquitetura de Alta Performance</strong>
+                  Sistemas e Landing Pages nativas, sem dependência de plataformas pesadas ou instáveis.
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-fluxusAccent text-2xl">🤝</span>
+                <div>
+                  <strong class="text-white block text-xl">Parceria de Longo Prazo</strong>
+                  Mais que prestadores de serviço, atuamos como braço estratégico de tecnologia e capacitação da sua equipe.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PLATAFORMA SCRUM IT! -->
+    <section id="scrum-it" class="py-24 md:py-32 bg-slate-100 dark:bg-[#080f1e] border-t-2 border-slate-800">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center mb-16">
+        <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-4">Nosso Motor de Governança</p>
+        <h2 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.1] uppercase tracking-wide text-fluxusNavy dark:text-white">Conheça a Plataforma Scrum It!</h2>
+      </div>
+
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <div class="flex flex-col justify-center space-y-8 fade-in-up text-left">
+          <p class="text-slate-700 dark:text-slate-200 text-2xl leading-relaxed font-bold">
+            Transparência absoluta: Acompanhe o seu projeto em tempo real do início ao fim.
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+            Desenvolvida internamente, o <strong class="text-fluxusAccent font-black">Scrum It!</strong> é a nossa plataforma organizacional proprietária de gestão ágil. Ao contratar qualquer serviço da Fluxus Agile, você ganha acesso exclusivo e gratuito para acompanhar a evolução das Sprints, Kanban de tarefas, auditoria de qualidade e gráficos Burndown.
+          </p>
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border-2 border-fluxusAccent space-y-4 shadow-lg">
+            <h4 class="font-black text-xl text-fluxusNavy dark:text-white uppercase">🎁 Bônus Exclusivo para Clientes Fluxus:</h4>
+            <ul class="space-y-3 text-slate-700 dark:text-slate-300 text-base font-bold">
+              <li class="flex items-center gap-3">✓ Licenciamento Gratuito da Plataforma durante o contrato</li>
+              <li class="flex items-center gap-3">✓ Treinamento e Capacitação da sua equipe inclusos</li>
+              <li class="flex items-center gap-3">✓ Relatórios de Log de Entrega e Métricas de Qualidade</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="rounded-[36px] overflow-hidden shadow-2xl border-2 border-slate-200 dark:border-slate-800 aspect-[4/3] w-full relative fade-in-up">
+          <img src="src/images/dashboard-recursos.jpg" alt="Painel operacional da Plataforma Scrum It mostrando o Kanban e gráficos Burndown" class="absolute inset-0 w-full h-full object-cover object-center" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SECTION O INVESTIMENTO -->
+    <section id="roi" class="py-24 md:py-32 bg-gradient-to-br from-[#102a43] to-[#0a1b2e] text-white border-t-2 border-slate-800">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center mb-16 md:mb-24">
+        <p class="font-black text-xl uppercase tracking-[0.2em] text-fluxusAccent mb-4">O Investimento</p>
+        <h2 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.1] uppercase tracking-wide text-white">Faça as contas com honestidade</h2>
+      </div>
+
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 grid md:grid-cols-2 gap-8 items-stretch fade-in-up">
+        <button onclick="openModal('inv-site')" class="p-8 bg-[#0a1b2e]/80 border-2 border-fluxusAccent rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl text-left w-full hover:scale-[1.02] transition-all duration-300 group outline-none">
+          <div class="space-y-2">
+            <h3 class="font-black text-2xl text-white tracking-tight flex items-center gap-2 group-hover:text-fluxusAccent transition-colors">
+              <span>●</span> Sem um site que converte
+            </h3>
+            <p class="text-base text-slate-300 leading-relaxed max-w-lg">
+              Sua marca parece desatualizada na internet. Você investe em tráfego pago, mas afasta potenciais compradores por falta de clareza visual. <span class="text-fluxusAccent font-bold text-xs block mt-1">Clique para ver os benefícios da solução Fluxus →</span>
+            </p>
+          </div>
+          <div class="text-left md:text-right shrink-0">
+            <span class="text-xs font-bold text-slate-400 uppercase block">Custo de Desperdício</span>
+            <span class="font-black text-2xl text-fluxusAccent whitespace-nowrap">R$ 500 – 1.500 / lead</span>
+          </div>
+        </button>
+        
+        <button onclick="openModal('inv-wa')" class="p-8 bg-[#0a1b2e]/80 border-2 border-fluxusAccent rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl text-left w-full hover:scale-[1.02] transition-all duration-300 group outline-none">
+          <div class="space-y-2">
+            <h3 class="font-black text-2xl text-white tracking-tight flex items-center gap-2 group-hover:text-fluxusAccent transition-colors">
+              <span>●</span> WhatsApp sem resposta instantânea
+            </h3>
+            <p class="text-base text-slate-300 leading-relaxed max-w-lg">
+              Deixar contatos aguardando por horas faz a intenção de compra sumir. A demora custa o faturamento do dia. <span class="text-fluxusAccent font-bold text-xs block mt-1">Clique para ver os benefícios da solução Fluxus →</span>
+            </p>
+          </div>
+          <div class="text-left md:text-right shrink-0">
+            <span class="text-xs font-bold text-slate-400 uppercase block">Vendas perdidas</span>
+            <span class="font-black text-2xl text-fluxusAccent whitespace-nowrap">R$ 1.000 – 3.000 / mês</span>
+          </div>
+        </button>
+
+        <button onclick="openModal('inv-sys')" class="p-8 bg-[#0a1b2e]/80 border-2 border-fluxusAccent rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl text-left w-full hover:scale-[1.02] transition-all duration-300 group outline-none">
+          <div class="space-y-2">
+            <h3 class="font-black text-2xl text-white tracking-tight flex items-center gap-2 group-hover:text-fluxusAccent transition-colors">
+              <span>●</span> Sem um sistema integrado sob medida
+            </h3>
+            <p class="text-base text-slate-300 leading-relaxed max-w-lg">
+              Sua operação fica travada em processos repetitivos manuais e planilhas instáveis que apagam dados cruciais para a escala do negócio. <span class="text-fluxusAccent font-bold text-xs block mt-1">Clique para ver os benefícios da solução Fluxus →</span>
+            </p>
+          </div>
+          <div class="text-left md:text-right shrink-0">
+            <span class="text-xs font-bold text-slate-400 uppercase block">Gargalo operacional</span>
+            <span class="font-black text-2xl text-fluxusAccent whitespace-nowrap uppercase tracking-wide">Recorrência Mensal</span>
+          </div>
+        </button>
+
+        <button onclick="openModal('inv-alone')" class="p-8 bg-[#0a1b2e]/80 border-2 border-cyan-500 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl text-left w-full hover:scale-[1.02] transition-all duration-300 group outline-none">
+          <div class="space-y-2">
+            <h3 class="font-black text-2xl text-white tracking-tight flex items-center gap-2 group-hover:text-fluxusAccent transition-colors">
+              <span>●</span> Tentar integrar tudo sozinho
+            </h3>
+            <p class="text-base text-slate-300 leading-relaxed max-w-lg">
+              Passar meses tentando decifrar APIs complexas e mantendo conexões instáveis que caem constantemente no meio do dia. <span class="text-fluxusAccent font-bold text-xs block mt-1">Clique para ver os benefícios da solução Fluxus →</span>
+            </p>
+          </div>
+          <div class="text-left md:text-right shrink-0">
+            <span class="text-xs font-bold text-cyan-400 uppercase block">Tempo e Estresse</span>
+            <span class="font-black text-2xl text-fluxusAccent whitespace-nowrap">6+ meses perdidos</span>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- 8. SECTION CTA FINAL -->
+    <section id="setup" class="py-24 md:py-32 bg-slate-50 dark:bg-[#050a12]">
+      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+        <div class="max-w-6xl mx-auto p-10 md:p-20 bg-white dark:bg-slate-900 border-4 border-fluxusAccent rounded-[44px] shadow-2xl text-center space-y-8 fade-in-up">
+          <p class="text-fluxusAccent font-black text-lg sm:text-xl uppercase tracking-widest">Alinhamento Estratégico</p>
+          <h2 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl leading-none uppercase text-fluxusNavy dark:text-white">Pronto para organizar sua operação digital?</h2>
+          <p class="text-slate-700 dark:text-slate-200 text-xl sm:text-2xl max-w-3xl mx-auto leading-relaxed">Agende um mapeamento gratuito e defina a arquitetura ideal com nosso CTO para remover gargalos organizacionais e acelerar seus resultados.</p>
+          <div class="pt-6">
+            <a href="https://wa.me/551236006887?text=Olá,%20Fabio!%20Gostaria%20de%20agendar%20um%20mapeamento%20estratégico%20da%20Fluxus%20Agile." target="_blank" rel="noopener" 
+               class="btn-cyber-glow hover:shadow-[0_0_35px_rgba(6,182,212,0.7)] hover:scale-[1.05] inline-block px-14 py-7 text-slate-950 font-black text-xl uppercase tracking-wider rounded-full shadow-2xl">
+              Falar com o CTO Fabio Roberti
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DINÂMICO PARA POPUPS -->
+  <div id="info-modal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4 bg-fluxusNavy/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+    <div class="bg-white dark:bg-slate-900 border-4 border-fluxusAccent rounded-[32px] max-w-2xl w-full p-8 md:p-10 shadow-2xl space-y-6 relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-3xl font-black text-slate-400 hover:text-fluxusAccent outline-none" aria-label="Fechar modal">✕</button>
+      <div id="modal-body-content" class="space-y-4">
+        <!-- Injetado via Javascript -->
+      </div>
+      <div class="text-right pt-4">
+        <button onclick="closeModal()" class="px-8 py-4 bg-slate-200 dark:bg-slate-800 font-bold uppercase text-sm rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-white">Fechar Visualização</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FOOTER INSTITUCIONAL FLUXUS AGILE COM COPYRIGHT CENTRALIZADO -->
+  <footer style="background-color: #05070a; color: #ffffff; border-top: 2px solid #1e293b; padding: 48px 24px 24px 24px; font-family: Arial, Helvetica, sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: start;">
+        
+        <!-- COLUNA 1 -->
+        <div style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+            <div style="display: flex; align-items: center; gap: 10px; height: 24px;">
+                <img src="./src/images/favicon-fluxus.jpg" onerror="this.onerror=null; this.src='public/favicon-fluxus.jpg';" alt="Fluxus Logo" style="height: 22px; width: 22px; border-radius: 4px; object-fit: cover;">
+                <span style="font-size: 1.1rem; font-weight: 900; letter-spacing: 0.5px; color: #ffffff; line-height: 1;">
+                    FLUXUS <span style="color: #ff9100; font-weight: 900;">AGILE</span>
+                </span>
+            </div>
+
+            <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.5; margin: 0;">
+                Inteligência Artificial, Sistemas Sob Medida e Engenharia de Processos focados em escalar operações de <strong style="color: #f8fafc;">empresas enxutas</strong> e otimizar resultados.
+            </p>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+            <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+                <h4 style="font-size: 0.85rem; font-weight: 900; color: #ff9100; text-transform: uppercase; letter-spacing: 1px; margin: 0; height: 24px; display: flex; align-items: center;">
+                    Canais de Atendimento
+                </h4>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; color: #e2e8f0; font-weight: 600;">
+                    <div>📞 TELEFONE / WHATSAPP: <span style="color: #00e676;">+55 (12) 3600-6887</span></div>
+                    <div>✉️ E-MAIL: <span style="color: #ffffff;">sm.fabio.roberticosta@gmail.com</span></div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 16px; background: #0f172a; padding: 14px 18px; border-radius: 10px; border: 1px solid #334155; width: fit-content;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887" alt="QR Code WhatsApp" style="width: 85px; height: 85px; border-radius: 6px; background: #ffffff; padding: 3px;">
+                <div style="display: flex; flex-direction: column; gap: 4px; text-align: left;">
+                    <span style="font-size: 0.95rem; font-weight: bold; color: #ffffff;">Escaneie o QR Code</span>
+                    <span style="font-size: 0.8rem; color: #94a3b8;">Fale direto no WhatsApp</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div style="display: flex; flex-direction: column; gap: 8px; text-align: right; align-items: flex-end;">
+            <h4 style="font-size: 0.85rem; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin: 0; height: 24px; display: flex; align-items: center; justify-content: flex-end;">
+                Liderança Técnica
+            </h4>
+            
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+                <div style="font-size: 1.25rem; font-weight: 900; color: #ffffff;">
+                    Fabio Roberti Costa
+                </div>
+                <div style="font-size: 0.85rem; font-weight: 900; color: #ff9100; letter-spacing: 0.5px;">
+                    CHIEF TECHNOLOGY OFFICER (CTO)
+                </div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #64748b; margin-top: 2px;">
+                    AGILE SOLUTIONS ARCHITECT & SCRUM MASTER
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT CENTRALIZADO -->
+    <div style="max-width: 1200px; margin: 40px auto 0 auto; padding-top: 20px; border-top: 1px solid #1e293b; text-align: center; font-size: 0.85rem; color: #64748b;">
+        © 2026 Fluxus Agile. Todos os direitos reservados. Inteligência Artificial, Sistemas sob Medida & Engenharia de Processos.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const modalData = {
+      'lucro-recorrente': `
+        <p class="text-fluxusAccent font-black text-xs uppercase tracking-widest">Modelo de Escala</p>
+        <h3 class="font-serif font-black text-3xl dark:text-white uppercase">Retorno sobre Margem</h3>
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">Nossas estruturas de software sob medida e automações de IA são implementadas para criar eficiência contínua. Ao remover a necessidade de intermediários lentos, reduzimos drasticamente o custo por lead qualificado, gerando uma previsibilidade de caixa estável e aumentando a margem líquida da sua operação todos os meses.</p>
+      `,
+      'inv-site': `
+        <p class="text-fluxusAccent font-black text-xs uppercase tracking-widest">Garantia de Conversão</p>
+        <h3 class="font-serif font-black text-3xl dark:text-white uppercase">A Vantagem da Landing Page Fluxus</h3>
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">Sua página é desenvolvida com foco total em velocidade de carregamento extrema e cópia persuasiva orientada à ação do usuário. Ao eliminar construtores lentos e elementos poluídos, garantimos que cada lead vindo do tráfego pago compreenda sua solução instantaneamente, multiplicando o retorno das suas campanhas de anúncios.</p>
+      `,
+      'inv-wa': `
+        <p class="text-fluxusAccent font-black text-xs uppercase tracking-widest">Escala de Atendimento</p>
+        <h3 class="font-serif font-black text-3xl dark:text-white uppercase">O Retorno do Robô Inteligente</h3>
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">O custo de perder uma venda por lentidão ultrapassa o valor de qualquer anúncio. Nosso Agente de IA comercial atua na linha de frente filtrando contatos e contornando objeções em 2 segundos. Ele opera de forma incansável fora do horário comercial, capturando oportunidades quentes e gerando economia real em contratações extras de pessoal.</p>
+      `,
+      'inv-sys': `
+        <p class="text-fluxusAccent font-black text-xs uppercase tracking-widest">Controle Absoluto</p>
+        <h3 class="font-serif font-black text-3xl dark:text-white uppercase">Previsibilidade Sistémica</h3>
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">Substituímos sistemas engessados de mensalidades altas e tabelas complexas por um ecossistema customizado focado inteiramente na dor do seu negócio. Integramos agendamentos, controles financeiros e CRMs corporativos nativos para blindar seus dados e criar uma infraestrutura operacional sólida.</p>
+      `,
+      'inv-alone': `
+        <p class="text-fluxusAccent font-black text-xs uppercase tracking-widest">Engenharia Especializada</p>
+        <h3 class="font-serif font-black text-3xl dark:text-white uppercase">O Custo Oculto do Falso Atalho</h3>
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">Perder meses com códigos inacabados, APIs instáveis que caem constantemente no meio do expediente comercial e integrações defeituosas custa infinitamente mais caro do que contratar nossa engenharia de software de ponta. Entregamos suas plataformas validadas, integradas e faturando em tempo recorde.</p>
+      `
+    };
+
+    function openModal(key) {
+      const content = modalData[key];
+      if (content) {
+        document.getElementById('modal-body-content').innerHTML = content;
+        document.getElementById('info-modal').classList.remove('hidden');
+      }
+    }
+    function closeModal() {
+      document.getElementById('info-modal').classList.add('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.hash !== '#hero') {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    });
+
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    function updateToggleIcon() {
+      const isDark = document.documentElement.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    }
+    updateToggleIcon();
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      updateToggleIcon();
+    });
+
+    const menuBtn = document.getElementById('hamburger-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const observerOptions = { root: null, threshold: 0.1, rootMargin: '0px' };
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(element => {
+      revealObserver.observe(element);
+    });
+  </script>
+</body>
+</html>
