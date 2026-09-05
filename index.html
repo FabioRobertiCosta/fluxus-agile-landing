@@ -1,763 +1,1751 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fluxus Agile | Transformamos o caos em boas memórias. Ajudamos sua empresa a cuidar do seu cliente interno: o seu colaborador!" />
-  
-  <link rel="shortcut icon" href="src/images/favicon-fluxus.jpg" type="image/jpeg" />
-  <link rel="icon" href="src/images/favicon-fluxus.jpg" type="image/jpeg" />
-  
-  <title>Fluxus Agile | Transformamos o Caos em Boas Memórias</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            serif: ['Playfair Display', 'Georgia', 'serif'],
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fluxus | Engenharia de Inteligência Operacional, Agentes de IA, Automação n8n e WhatsApp Official Cloud API para PMEs e RHs."
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./src/images/favicon-fluxus.jpg"
+      type="image/jpeg"
+    />
+    <link rel="icon" href="./src/images/favicon-fluxus.jpg" type="image/jpeg" />
+
+    <title>Fluxus | Engenharia de Inteligência Operacional & Agentes de IA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              serif: ["Playfair Display", "Georgia", "serif"],
+            },
+            colors: {
+              agileBlue: "#3b82f6",
+              agileAmber: "#f59e0b",
+              agileDark: "#030712",
+              metaGreen: "#10b981",
+            },
           },
-          colors: {
-            agileBlue: '#3b82f6',
-            agileAmber: '#f59e0b',
-            agileDark: '#030712',
-          }
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      /* Glow Infinito para as Badges Superiores */
+      @keyframes pulseGlowBadge {
+        0%, 100% {
+          box-shadow: 0 0 12px rgba(245, 158, 11, 0.4), inset 0 0 8px rgba(245, 158, 11, 0.2);
+          border-color: rgba(245, 158, 11, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(245, 158, 11, 0.85), inset 0 0 15px rgba(245, 158, 11, 0.4);
+          border-color: rgba(245, 158, 11, 1);
         }
       }
-    }
-  </script>
-  
-  <style>
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    
-    /* Efeitos de Brilho, Movimento e Pulso (Glow/Shimmer/Float) */
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 15px rgba(59, 130, 246, 0.2); }
-      50% { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8), inset 0 0 25px rgba(59, 130, 246, 0.4); }
-    }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
+      .badge-glow-infinito {
+        animation: pulseGlowBadge 2.5s infinite ease-in-out;
+      }
 
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
+      /* Glow Infinito para Botoes */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 35px rgba(59, 130, 246, 0.8), inset 0 0 25px rgba(59, 130, 246, 0.4);
+        }
+      }
 
-    .card-hover-effect {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .card-hover-effect:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.5);
-    }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
 
-    .btn-agile-glow {
-      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      animation: pulseGlow 3s infinite;
-    }
-    .btn-agile-glow::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%; width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: all 0.6s;
-    }
-    .btn-agile-glow:hover::before { left: 100%; }
+      /* Keyframes para Degradês Móveis Direcionais */
+      @keyframes shimmerCenterOut {
+        0% { background-position: 50% 0%; }
+        50% { background-position: 100% 0%; }
+        100% { background-position: 50% 0%; }
+      }
 
-    .shimmer-text {
-      background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 25%, #f59e0b 50%, #60a5fa 75%, #3b82f6 100%);
-      background-size: 200% auto;
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: shimmer 4s linear infinite;
-    }
+      @keyframes shimmerLeftRight {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
 
-    .float-animation {
-      animation: float 5s ease-in-out infinite;
-    }
+      @keyframes shimmerRightLeft {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
 
-    .modal-backdrop {
-      background-color: rgba(3, 7, 18, 0.88);
-      backdrop-filter: blur(12px);
-    }
-  </style>
-</head>
+      @keyframes shimmerTopDown {
+        0% { background-position: 0% -200%; }
+        100% { background-position: 0% 200%; }
+      }
 
-<body class="bg-[#030712] text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
+      /* Classes de Degradê Dinâmico */
+      .glow-center-out {
+        background: radial-gradient(circle, #60a5fa 0%, #3b82f6 45%, #f59e0b 85%, #60a5fa 100%);
+        background-size: 200% 200%;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmerCenterOut 4s ease-in-out infinite;
+      }
 
-  <!-- HEADER OFICIAL -->
-  <header id="header" class="sticky top-0 z-50 w-full bg-[#030712]/95 backdrop-blur-md border-b-2 border-slate-800">
-    <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 h-24 flex items-center justify-between gap-4">
-      <a href="#hero" class="flex items-center gap-4 shrink-0">
-        <div class="w-12 h-12 overflow-hidden rounded-xl flex items-center justify-center bg-black border-2 border-agileBlue shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-          <img src="src/images/favicon-fluxus.jpg" alt="Logo Fluxus" class="w-full h-full object-cover scale-110" onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887';" />
-        </div>
-        <span class="font-black text-2xl tracking-tight text-white uppercase">Fluxus <span class="text-agileBlue">Agile</span></span>
-      </a>
+      .glow-left-right {
+        background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 30%, #f59e0b 60%, #3b82f6 100%);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmerLeftRight 3.5s linear infinite;
+      }
 
-      <nav class="hidden lg:flex items-center gap-10">
-        <a href="#manifesto" class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition">Nossa Filosofia</a>
-        <a href="#esteira-rh" class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition">Soluções de Apoio</a>
-        <a href="#ecossistema" class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition">Nossas Verticais</a>
-        <a href="#lideranca" class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition">Liderança</a>
-      </nav>
+      .glow-right-left {
+        background: linear-gradient(270deg, #3b82f6 0%, #f59e0b 40%, #60a5fa 80%, #3b82f6 100%);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmerRightLeft 3.5s linear infinite;
+      }
 
-      <div class="flex items-center">
-        <button id="hamburger-menu" type="button" aria-label="Abrir menu" class="lg:hidden w-12 h-12 flex items-center justify-center text-3xl text-white">☰</button>
-      </div>
-    </div>
+      .glow-top-down {
+        background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #f59e0b 100%);
+        background-size: auto 200%;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmerTopDown 4s linear infinite;
+      }
 
-    <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-slate-800 bg-[#030712] px-8 py-8 space-y-4 shadow-2xl">
-      <a href="#manifesto" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white">Nossa Filosofia</a>
-      <a href="#esteira-rh" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white">Soluções de Apoio</a>
-      <a href="#ecossistema" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white">Nossas Verticais</a>
-      <a href="#lideranca" class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white">Liderança</a>
-    </div>
-  </header>
+      .card-hover-effect {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card-hover-effect:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.5);
+      }
 
-  <main id="main-content">
-    
-    <!-- 1. HERO SECTION -->
-    <section id="hero" class="w-full flex flex-col justify-center pt-14 pb-20 lg:pt-24 lg:pb-28 bg-[#030712] overflow-hidden">
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center mb-10 lg:mb-16 space-y-6">
-        <p class="font-black text-xl sm:text-2xl lg:text-3xl uppercase tracking-[0.25em] text-agileBlue">
-          Transformamos o caos em boas memórias
-        </p>
-        <h1 class="font-serif font-black text-5xl sm:text-7xl lg:text-8xl leading-[1.1] text-white uppercase tracking-wide">
-          O seu cliente não vai esperar. A IA responde em 2 segundos.
-        </h1>
-      </div>
+      .btn-agile-glow {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        animation: pulseGlow 3s infinite;
+      }
+      .btn-agile-glow::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: all 0.6s;
+      }
+      .btn-agile-glow:hover::before {
+        left: 100%;
+      }
 
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div class="flex flex-col justify-center space-y-8 text-left">
-          <div class="space-y-6">
-            <!-- FRASE ATUALIZADA NO HERO CONFORME SOLICITADO -->
-            <h2 class="font-serif font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-wide leading-tight shimmer-text">
-              Ajudamos a sua empresa a cuidar do seu cliente interno! <br/>O seu colaborador!
-            </h2>
-            <p class="text-slate-200 text-xl sm:text-2xl leading-relaxed font-medium">
-              Elimine de vez as falhas e a perda de oportunidades comerciais. Substitua a lentidão humana por Agentes de Inteligência Artificial nativos que atendem e resolvem as necessidades dos seus leads 24h por dia, sem fricção ou interrupções.
-            </p>
-            <p class="text-slate-400 text-base sm:text-lg leading-relaxed border-l-4 border-agileBlue pl-4">
-              Nossa tecnologia apoia a sua equipe interna: facilitamos a captação de currículos, triagem, capacitação e criamos a sua Landing Page de Onboarding personalizada diretamente no WhatsApp.
-            </p>
+      .float-animation {
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .modal-backdrop {
+        background-color: rgba(3, 7, 18, 0.88);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#030712] text-slate-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden"
+  >
+    <!-- HEADER OFICIAL -->
+    <header
+      id="header"
+      class="sticky top-0 z-50 w-full bg-[#030712]/95 backdrop-blur-md border-b-2 border-slate-800"
+    >
+      <div
+        class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 h-24 flex items-center justify-between gap-4"
+      >
+        <a href="#hero" class="flex items-center gap-4 shrink-0">
+          <div
+            class="w-12 h-12 overflow-hidden rounded-xl flex items-center justify-center bg-black border-2 border-agileBlue shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+          >
+            <img
+              src="./src/images/favicon-fluxus.jpg"
+              alt="Logo Fluxus"
+              class="w-full h-full object-cover scale-110"
+              onerror="
+                this.onerror = null;
+                this.src =
+                  'https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887';
+              "
+            />
           </div>
-          
-          <div class="flex flex-wrap gap-6 pt-2">
-            <a href="https://wa.me/551236006887?text=Olá!%20Gostaria%20de%20agendar%20uma%20consultoria%20com%20o%20CTO." 
-               target="_blank" rel="noopener" 
-               class="btn-agile-glow hover:scale-[1.03] duration-300 px-8 py-5 text-white font-black text-base uppercase tracking-wider rounded-full shadow-2xl text-center w-full sm:w-auto">
-              Agendar Consultoria CTO ⚡
-            </a>
-            <a href="https://wa.me/551236006887?text=Olá!%20Quero%20testar%20a%20demonstração%20do%20Fluxus%20no%20WhatsApp." 
-               target="_blank" rel="noopener" 
-               class="px-8 py-5 bg-slate-900 text-white font-black text-base uppercase tracking-wider rounded-full border-2 border-slate-700 hover:border-agileBlue hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition text-center w-full sm:w-auto">
-              Testar Demo no Zap ⚡
-            </a>
+          <span class="font-black text-2xl tracking-tight text-white uppercase"
+            >Fluxus</span
+          >
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a
+            href="#manifesto"
+            class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition"
+            >Engenharia Operacional</a
+          >
+          <a
+            href="#seguranca-meta"
+            class="font-black text-sm uppercase tracking-wider text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1"
+            ><span>🛡️</span> API Oficial Meta</a
+          >
+          <a
+            href="#esteira-rh"
+            class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition"
+            >Soluções de Apoio</a
+          >
+          <a
+            href="#ecossistema"
+            class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition"
+            >Ecossistema</a
+          >
+          <a
+            href="#lideranca"
+            class="font-black text-sm uppercase tracking-wider text-slate-200 hover:text-agileBlue transition"
+            >Liderança CTO</a
+          >
+        </nav>
+
+        <div class="flex items-center">
+          <button
+            id="hamburger-menu"
+            type="button"
+            aria-label="Abrir menu"
+            class="lg:hidden w-12 h-12 flex items-center justify-center text-3xl text-white"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden border-t-2 border-slate-800 bg-[#030712] px-8 py-8 space-y-4 shadow-2xl"
+      >
+        <a
+          href="#manifesto"
+          class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white"
+          >Engenharia Operacional</a
+        >
+        <a
+          href="#seguranca-meta"
+          class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-emerald-400"
+          >🛡️ API Oficial Meta</a
+        >
+        <a
+          href="#esteira-rh"
+          class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white"
+          >Soluções de Apoio</a
+        >
+        <a
+          href="#ecossistema"
+          class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white"
+          >Ecossistema</a
+        >
+        <a
+          href="#lideranca"
+          class="block font-black text-xl uppercase tracking-wide py-3 border-b border-slate-800 text-white"
+          >Liderança CTO</a
+        >
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- 1. HERO SECTION -->
+      <section
+        id="hero"
+        class="w-full flex flex-col justify-center pt-10 pb-16 lg:pt-16 lg:pb-20 bg-[#030712] overflow-hidden"
+      >
+        <div
+          class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center mb-8 lg:mb-12 space-y-4"
+        >
+          <!-- BADGES TECNOLÓGICAS NO HERO -->
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <span class="bg-emerald-500/10 text-emerald-400 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-emerald-500/40 tracking-wider inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              WhatsApp Business Cloud API Oficial
+            </span>
+            <span class="bg-blue-500/10 text-blue-400 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-blue-500/40 tracking-wider inline-flex items-center gap-1.5">
+              ⚡ Motor n8n & LLM Agents
+            </span>
           </div>
+
+          <p
+            class="font-black text-lg sm:text-xl lg:text-2xl uppercase tracking-[0.25em] glow-left-right"
+          >
+            Transformamos o caos em boas memórias
+          </p>
+          <h1
+            class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl leading-relaxed text-white uppercase tracking-widest glow-center-out max-w-6xl mx-auto px-2"
+          >
+            O seu cliente não vai esperar. <br>A IA responde em 2 segundos <br>com 100% de estabilidade.
+          </h1>
         </div>
 
-        <aside class="w-full bg-[#0b1322] rounded-[36px] shadow-2xl overflow-hidden float-animation border-2 border-agileBlue/50 p-6 sm:p-8 space-y-6 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-agileBlue flex items-center justify-center font-black text-white text-sm shadow-[0_0_10px_#3b82f6]">IA</div>
-              <div>
-                <h4 class="font-black text-white text-base">Agente Nativo Fluxus</h4>
-                <p class="text-xs text-emerald-400 font-bold">● Atendimento Ativo 24/7 (2s)</p>
+        <div
+          class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+        >
+          <div class="flex flex-col justify-center space-y-6 text-left">
+            <div class="space-y-4">
+              <h2
+                class="font-serif font-black text-xl sm:text-2xl lg:text-3xl uppercase tracking-wider leading-snug glow-center-out inline-block"
+              >
+                Ajudamos a sua empresa!<br />
+                Cuidar do seu cliente interno!<br />
+                O seu colaborador!
+              </h2>
+              <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-medium">
+                Elimine de vez as falhas e a perda de oportunidades comerciais.
+               Acabe com a espera. Coloque a <strong>inteligência artificial</strong> para responder em segundos no <strong>Site Oficial do  WhatsApp</strong>, organizando todos os contatos automaticamente no seu sistema e planilhas.
+              </p>
+              <p class="text-slate-400 text-sm sm:text-base leading-relaxed border-l-4 border-agileBlue pl-4">
+                Nossa Engenharia Operacional apoia a sua equipe interna: facilitamos a
+                captação de currículos, triagem de candidatos, capacitação e criamos a sua
+                Landing Page de Onboarding personalizada diretamente no
+                WhatsApp, com <strong>zero risco de banimento de chip</strong>.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a
+                href="https://wa.me/551236006887?text=Olá!%20Gostaria%20de%20agendar%20uma%20consultoria%20com%20o%20CTO%20da%20Fluxus."
+                target="_blank"
+                rel="noopener"
+                class="btn-agile-glow hover:scale-[1.03] duration-300 px-8 py-4 text-white font-black text-sm uppercase tracking-wider rounded-full shadow-2xl text-center w-full sm:w-auto"
+              >
+                Agendar Consultoria CTO ⚡
+              </a>
+              <a
+                href="https://wa.me/551236006887?text=Olá!%20Quero%20testar%20a%20demonstração%20do%20Agente%20Oficial%20Fluxus%20no%20WhatsApp."
+                target="_blank"
+                rel="noopener"
+                class="px-8 py-4 bg-slate-900 text-white font-black text-sm uppercase tracking-wider rounded-full border-2 border-slate-700 hover:border-agileBlue hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition text-center w-full sm:w-auto"
+              >
+                Testar no WhatsApp⚡
+              </a>
+            </div>
+          </div>
+
+          <aside
+            class="w-full bg-[#0b1322] rounded-[30px] overflow-hidden float-animation border-2 border-agileBlue/50 p-6 space-y-5 shadow-[0_0_30px_rgba(59,130,246,0.2)]"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-agileBlue flex items-center justify-center font-black text-white text-sm shadow-[0_0_10px_#3b82f6]"
+                >
+                  IA
+                </div>
+                <div>
+                  <h4 class="font-black text-white text-base">
+                    Agente Oficial Fluxus (n8n + Meta API)
+                  </h4>
+                  <p class="text-xs text-emerald-400 font-bold flex items-center gap-1">
+                    <span>●</span> WhatsApp Business Cloud API Ativa
+                  </p>
+                </div>
+              </div>
+              <span
+                class="text-xs bg-emerald-950/80 text-emerald-400 px-3 py-1 rounded-full font-mono border border-emerald-500/40 font-bold"
+                >100% Seguro</span
+              >
+            </div>
+
+            <div class="space-y-3 font-sans text-xs sm:text-sm">
+              <div
+                class="bg-slate-900/90 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[85%] border border-slate-800"
+              >
+                <p class="font-bold text-agileBlue mb-1">
+                  💬 Colaborador / Candidato:
+                </p>
+                <p>
+                  Quero enviar meu currículo para as vagas abertas ou tirar dúvida sobre minha escala!
+                </p>
+              </div>
+              <div
+                class="bg-agileBlue/20 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%] ml-auto border border-agileBlue/40"
+              >
+                <p>
+                  ⚡ Resposta em 2s: Dados triados pelo motor n8n, registrados no CRM/Planilha e link de suporte enviado no WhatsApp!
+                </p>
+              </div>
+              <div
+                class="bg-slate-900/90 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[85%] border border-slate-800"
+              >
+                <p class="font-bold text-amber-400 mb-1">
+                  📄 Novo Colaborador (Onboarding):
+                </p>
+                <p>
+                  Onde encontro o manual da empresa e as diretrizes da minha função?
+                </p>
+              </div>
+              <div
+                class="bg-agileBlue/20 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%] ml-auto border border-agileBlue/40"
+              >
+                <p>
+                  ⚡ Resposta em 2s: Seja bem-vindo! Acesse sua Landing Page exclusiva de Onboarding aqui: [Link]
+                </p>
               </div>
             </div>
-            <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-full font-mono border border-slate-800">Zero Espera</span>
-          </div>
 
-          <div class="space-y-4 font-sans text-sm">
-            <div class="bg-slate-900/90 text-slate-200 p-4 rounded-2xl rounded-tl-none max-w-[85%] border border-slate-800">
-              <p class="font-bold text-agileBlue mb-1">💬 Colaborador / Candidato:</p>
-              <p>Quero enviar meu currículo para as vagas abertas ou tirar dúvida sobre minha escala!</p>
+            <div
+              class="grid grid-cols-3 text-center border-t border-slate-800 pt-3"
+            >
+              <div>
+                <strong class="block text-xl font-black text-agileBlue">2s</strong>
+                <span class="text-[9px] font-black text-slate-400 uppercase">Tempo de Resposta</span>
+              </div>
+              <div>
+                <strong class="block text-xl font-black text-emerald-400">0%</strong>
+                <span class="text-[9px] font-black text-slate-400 uppercase">Risco de Banimento</span>
+              </div>
+              <div>
+                <strong class="block text-xl font-black text-agileBlue">100%</strong>
+                <span class="text-[9px] font-black text-slate-400 uppercase">Apoio ao RH & CRM</span>
+              </div>
             </div>
-            <div class="bg-agileBlue/20 text-white p-4 rounded-2xl rounded-tr-none max-w-[80%] ml-auto border border-agileBlue/40">
-              <p>⚡ Resposta em 2s: Dados registrados no banco e link de suporte enviado no Zap!</p>
-            </div>
-            <div class="bg-slate-900/90 text-slate-200 p-4 rounded-2xl rounded-tl-none max-w-[85%] border border-slate-800">
-              <p class="font-bold text-emerald-400 mb-1">✓ Suporte ao Cliente Interno:</p>
-              <p>Atendimento sem burocracia, liberando o RH para acolher a equipe pessoalmente.</p>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-3 text-center border-t border-slate-800 pt-4">
-            <div>
-              <strong class="block text-2xl font-black text-agileBlue">2s</strong>
-              <span class="text-[10px] font-black text-slate-400 uppercase">Tempo de Resposta</span>
-            </div>
-            <div>
-              <strong class="block text-2xl font-black text-agileBlue">24/7</strong>
-              <span class="text-[10px] font-black text-slate-400 uppercase">WhatsApp Ativo</span>
-            </div>
-            <div>
-              <strong class="block text-2xl font-black text-agileBlue">100%</strong>
-              <span class="text-[10px] font-black text-slate-400 uppercase">Apoio ao RH</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- SEÇÃO: IMPLANTAÇÃO ÁGIL 100% NO WHATSAPP (PORTAL CENTRAL) -->
-    <section id="implantacao-agile" class="py-20 bg-[#050b16] border-t-2 border-slate-800">
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center">
-        
-        <!-- CABEÇALHO DA SEÇÃO -->
-        <div class="max-w-4xl mx-auto space-y-4 mb-16">
-          <span class="bg-amber-500/20 text-amber-400 font-black text-xs sm:text-sm uppercase px-4 py-2 rounded-full border border-amber-500/30 tracking-widest inline-block shadow-lg">
-            ⚡ SEM BUROCRACIA &amp; SEM PERDA DE TEMPO
-          </span>
-          <h2 class="font-serif font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-wide text-white leading-tight">
-            Implantação Ágil 100% no WhatsApp
-          </h2>
-          <p class="text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-            Sem interromper o atendimento ou a rotina da sua empresa. Mapeamos os processos do seu negócio e configuramos seus robôs de forma leve, direta e assíncrona.
-          </p>
+          </aside>
         </div>
+      </section>
 
-        <!-- 3 CARDS INFORMATIVOS -->
-        <div class="grid md:grid-cols-3 gap-8 text-left">
-          
-          <!-- CARD 1 -->
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-indigo-500 transition-all duration-300 shadow-xl group">
-            <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-black text-2xl border border-indigo-500/40 group-hover:scale-110 transition duration-300">
-              💬
-            </div>
-            <h3 class="font-black text-xl text-white uppercase tracking-tight">Zero Reuniões Longas</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Tabelas de preços, fluxos de atendimento, regras de conduta e cardápios/serviços enviados por simples mensagens de texto e áudio e vídeo no WhatsApp.
-            </p>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-amber-500 transition-all duration-300 shadow-xl group">
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-2xl border border-amber-500/40 group-hover:scale-110 transition duration-300">
-              👥
-            </div>
-            <h3 class="font-black text-xl text-white uppercase tracking-tight">Sem Sobrecarregar o Proprietário</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              O dono do negócio não perde tempo. Alinhamos a parametrização e as regras da automação diretamente com o seu <strong class="text-white">gerente ou líder operacional</strong>.
-            </p>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-emerald-500 transition-all duration-300 shadow-xl group">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-2xl border border-emerald-500/40 group-hover:scale-110 transition duration-300">
-              📲
-            </div>
-            <h3 class="font-black text-xl text-white uppercase tracking-tight">Treinamento no Próprio WhatsApp</h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Sua equipe aprende a utilizar os robôs, acessar as landing pages e consultar informações com vídeos explicativos diretos de 2 minutos no próprio WhatsApp.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 2. SEÇÃO 1: FILOSOFIA & CARDS CLICÁVEIS (COM POP-UPS INTERATIVOS) -->
-    <section id="manifesto" class="py-16 md:py-24 bg-slate-900/80 border-y-2 border-slate-800 text-white">
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
-        <div class="max-w-4xl mx-auto text-center space-y-6 mb-16">
-          <span class="bg-agileAmber/20 text-agileAmber font-black text-xs sm:text-sm uppercase px-4 py-2 rounded-full border border-agileAmber/30 tracking-widest inline-block animate-pulse">
-            🌱 Nossa Filosofia de Trabalho • Clique nos Cards para Saber Mais
-          </span>
-          <h2 class="font-serif font-black text-3xl sm:text-5xl uppercase tracking-wide text-white">
-            Ajudamos sua empresa a cuidar do seu cliente interno!
-          </h2>
-          <p class="text-slate-300 text-lg sm:text-xl leading-relaxed">
-            Nós não substituímos o seu RH e não contratamos ninguém no seu lugar. Nós entregamos a melhor tecnologia para que a sua equipe trabalhe com leveza e retenha os melhores talentos.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8 items-stretch">
-          
-          <!-- CARD ESQUERDA: ATENDIMENTO REPETITIVO (CLICÁVEL) -->
-          <div onclick="openModal('modal-repetitivo')" class="cursor-pointer bg-[#030712] border-2 border-slate-800 p-8 rounded-3xl space-y-6 card-hover-effect hover:border-agileBlue group relative overflow-hidden shadow-xl">
-            <div class="w-14 h-14 rounded-2xl bg-agileBlue/20 text-agileBlue flex items-center justify-center font-black text-2xl border border-agileBlue/40 group-hover:scale-110 transition duration-300">💬</div>
-            <h3 class="font-black text-xl text-white uppercase tracking-tight group-hover:text-agileBlue transition">Atendimento Repetitivo</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Respostas automáticas no Zap para dúvidas recorrentes de escala, atestados, holerites e normas internas, além de treinamento contínuo da equipe.
-            </p>
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-agileBlue font-black uppercase tracking-wider">
-              <span>Como funciona a atualização? ➔</span>
-              <span class="bg-agileBlue/20 px-3 py-1 rounded-full border border-agileBlue/40">Clique Aqui</span>
-            </div>
-          </div>
-
-          <!-- CARD MEIO: VALORIZAÇÃO HUMANA (CLICÁVEL) -->
-          <div onclick="openModal('modal-valorizacao')" class="cursor-pointer bg-[#030712] border-2 border-slate-800 p-8 rounded-3xl space-y-6 card-hover-effect hover:border-agileAmber group relative overflow-hidden shadow-xl">
-            <div class="w-14 h-14 rounded-2xl bg-agileAmber/20 text-agileAmber flex items-center justify-center font-black text-2xl border border-agileAmber/40 group-hover:scale-110 transition duration-300">❤️</div>
-            <h3 class="font-black text-xl text-white uppercase tracking-tight group-hover:text-agileAmber transition">Valorização Humana</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Mais tempo livre para a liderança dar atenção presencial ao colaborador e entender suas necessidades.
-            </p>
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-agileAmber font-black uppercase tracking-wider">
-              <span>Ver exemplos de ações ➔</span>
-              <span class="bg-agileAmber/20 px-3 py-1 rounded-full border border-agileAmber/40">Clique Aqui</span>
-            </div>
-          </div>
-
-          <!-- CARD DIREITA: BANCO DE TALENTOS & SELEÇÃO (CLICÁVEL) -->
-          <div onclick="openModal('modal-banco-talentos')" class="cursor-pointer bg-[#030712] border-2 border-slate-800 p-8 rounded-3xl space-y-6 card-hover-effect hover:border-emerald-500 group relative overflow-hidden shadow-xl">
-            <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-2xl border border-emerald-500/40 group-hover:scale-110 transition duration-300">📁</div>
-            <h3 class="font-black text-xl text-white uppercase tracking-tight group-hover:text-emerald-400 transition">Banco de Talentos 24/7</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Recebimento e organização contínua de currículos no WhatsApp para você selecionar rapidamente os melhores candidatos. Qualquer área de atuação, qualquer cargo, qualquer nível de senioridade.
-            </p>
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-emerald-400 font-black uppercase tracking-wider">
-              <span>Entender o processo ➔</span>
-              <span class="bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/40">Clique Aqui</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. SEÇÃO DE APOIO AO RH: TECNOLOGIA DE RECRUTAMENTO & LANDING PAGE ONBOARDING -->
-    <section id="esteira-rh" class="py-20 bg-[#030712]">
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
-        <div class="text-center max-w-4xl mx-auto space-y-4 mb-16">
-          <span class="bg-agileBlue/20 text-agileBlue font-black text-xs sm:text-sm uppercase px-4 py-2 rounded-full border border-agileBlue/30 tracking-widest inline-block">
-            🚀 Ferramentas de Tecnologia para Sua Equipe
-          </span>
-          <h2 class="font-serif font-black text-4xl sm:text-6xl uppercase tracking-wide text-white">
-            NÓS NÃO CONTRATAMOS NINGUÉM. NÓS AJUDAMOS A SUA EMPRESA CONTRATAR PESSOAL, COM TECNOLOGIA!
-          </h2>
-          <p class="text-slate-300 text-lg sm:text-xl">
-            A decisão final é sempre sua. Entregamos a tecnologia para triagem e criamos a sua <strong>Landing Page de Onboarding personalizada</strong> para engajar os novos colaboradores desde o primeiro dia.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-4 gap-8">
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-agileBlue transition">
-            <span class="text-3xl font-black text-agileBlue">01</span>
-            <h3 class="font-black text-xl text-white uppercase">Captação na palma da mão</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Coleta e organização automática de dados de candidatos diretamente no WhatsApp.</p>
-          </div>
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-agileBlue transition">
-            <span class="text-3xl font-black text-agileBlue">02</span>
-            <h3 class="font-black text-xl text-white uppercase">Triagem com Tecnologia</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Perguntas qualificatórias para seu RH escolher de forma rápida os melhores perfis.</p>
-          </div>
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-agileBlue transition">
-            <span class="text-3xl font-black text-agileBlue">03</span>
-            <h3 class="font-black text-xl text-white uppercase">Landing Page Onboard</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Desenvolvimento da sua página exclusiva com cultura, Missão, boas-vindas da empresa, descrição da vaga.</p>
-          </div>
-          <div class="bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-agileBlue transition">
-            <span class="text-3xl font-black text-agileBlue">04</span>
-            <h3 class="font-black text-xl text-white uppercase">Módulos de Capacitação</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Envio de materiais e orientações de trabalho no celular do colaborador recém-chegado.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. SEÇÃO DE VERTICAIS (LINKS E ESTRUTURA MAIS PRÓXIMA DA ORIGINAL) -->
-    <section id="ecossistema" class="py-24 bg-[#070d18] border-t-2 border-slate-800">
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
-        <div class="text-center max-w-4xl mx-auto space-y-4 mb-16">
-          <span class="bg-agileAmber/20 text-agileAmber font-black text-xs sm:text-sm uppercase px-4 py-2 rounded-full border border-agileAmber/30 tracking-widest inline-block">
-            🎯 Nossas Soluções Especializadas Por Setor
-          </span>
-          <h2 class="font-serif font-black text-4xl sm:text-6xl uppercase tracking-wide text-white">
-            Explore Nosso Ecossistema
-          </h2>
-          <p class="text-slate-300 text-lg sm:text-xl">
-            Clique no card do seu nicho para abrir o modal com os entregáveis detalhados ou acesse a Landing Page dedicada.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
-          <!-- CARD 1: RH (PMEs) -->
-          <div onclick="openModal('modal-rh')" class="cursor-pointer bg-[#0b1322] border-2 border-indigo-500/40 p-8 rounded-3xl space-y-6 hover:border-indigo-400 card-hover-effect shadow-xl flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl font-black">👥</div>
-              <h3 class="font-serif font-black text-2xl text-white uppercase">Fluxus RH</h3>
-              <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest">PMEs & Empresas Enxutas</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Suporte de atendimento ao colaborador e ferramentas de tecnologia para recrutamento e onboarding no Zap.
-              </p>
-            </div>
-            <div class="space-y-2 pt-4">
-              <button class="w-full py-3 bg-indigo-600/20 text-indigo-300 font-black text-xs uppercase tracking-wider rounded-xl border border-indigo-500/40 hover:bg-indigo-600 hover:text-white transition">
-                Ver Escopo & DoD 🔍
-              </button>
-            </div>
-          </div>
-
-          <!-- CARD 2: HOTELARIA -->
-          <div onclick="openModal('modal-hotel')" class="cursor-pointer bg-[#0b1322] border-2 border-yellow-500/40 p-8 rounded-3xl space-y-6 hover:border-yellow-400 card-hover-effect shadow-xl flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl font-black">🏨</div>
-              <h3 class="font-serif font-black text-2xl text-white uppercase">Fluxus Hotel</h3>
-              <p class="text-xs font-bold text-yellow-400 uppercase tracking-widest">Pousadas & Hotéis</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Padronização de regras de atendimento para recepção e governança, além do suporte direto no WhatsApp.
-              </p>
-            </div>
-            <div class="space-y-2 pt-4">
-              <button class="w-full py-3 bg-yellow-600/20 text-yellow-300 font-black text-xs uppercase tracking-wider rounded-xl border border-yellow-500/40 hover:bg-yellow-600 hover:text-slate-950 transition">
-                Ver Escopo & DoD 🔍
-              </button>
-            </div>
-          </div>
-
-          <!-- CARD 3: GASTRONOMIA (A&B AJUSTADO: FOCO EM PESSOAL DE SALÃO E COZINHA) -->
-          <div onclick="openModal('modal-ab')" class="cursor-pointer bg-[#0b1322] border-2 border-orange-500/40 p-8 rounded-3xl space-y-6 hover:border-orange-400 card-hover-effect shadow-xl flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-2xl font-black">🍕</div>
-              <h3 class="font-serif font-black text-2xl text-white uppercase">Fluxus A&B</h3>
-              <p class="text-xs font-bold text-orange-400 uppercase tracking-widest">Bares & Gastronomia</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Tecnologia para ajudar na contratação do pessoal de salão e cozinha, padronização de procedimentos e onboarding.
-              </p>
-            </div>
-            <div class="space-y-2 pt-4">
-              <button class="w-full py-3 bg-orange-600/20 text-orange-300 font-black text-xs uppercase tracking-wider rounded-xl border border-orange-500/40 hover:bg-orange-600 hover:text-white transition">
-                Ver Escopo & DoD 🔍
-              </button>
-            </div>
-          </div>
-
-          <!-- CARD 4: CLÍNICAS & DENTISTAS (GO) -->
-          <div onclick="openModal('modal-go')" class="cursor-pointer bg-[#0b1322] border-2 border-emerald-500/40 p-8 rounded-3xl space-y-6 hover:border-emerald-400 card-hover-effect shadow-xl flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-black">🏥</div>
-              <h3 class="font-serif font-black text-2xl text-white uppercase">Fluxus GO</h3>
-              <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Clínicas & Consultórios</p>
-              <p class="text-slate-300 text-sm leading-relaxed">
-                Apoio para recepcionistas e secretárias, protocolos de conduta e automação de agendamentos no WhatsApp.
-              </p>
-            </div>
-            <div class="space-y-2 pt-4">
-              <button class="w-full py-3 bg-emerald-600/20 text-emerald-300 font-black text-xs uppercase tracking-wider rounded-xl border border-emerald-500/40 hover:bg-emerald-600 hover:text-slate-950 transition">
-                Ver Escopo & DoD 🔍
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. SEÇÃO DE LIDERANÇA TÉCNICA -->
-    <section id="lideranca" class="py-20 bg-[#030712] border-t-2 border-slate-800">
-      <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
-        <div class="bg-[#0b1322] border-2 border-slate-800 rounded-[36px] p-8 sm:p-12 lg:p-16 grid lg:grid-cols-3 gap-12 items-center shadow-2xl">
-          <div class="space-y-4 lg:col-span-2">
-            <span class="bg-agileBlue/20 text-agileBlue font-black text-xs sm:text-sm uppercase px-4 py-2 rounded-full border border-agileBlue/30 tracking-widest inline-block">
-              👨‍💼 Liderança Técnica & Experiência Operacional
+      <!-- SEÇÃO NOVA: COMPARATIVO DE SEGURANÇA E SEGURANÇA META -->
+      <section
+        id="seguranca-meta"
+        class="py-16 bg-[#02050e] border-t-2 border-emerald-500/30"
+      >
+        <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+          <div class="text-center max-w-5xl mx-auto space-y-3 mb-12">
+            <span
+              class="bg-emerald-500/10 text-emerald-400 font-black text-xs uppercase px-5 py-2 rounded-full border border-emerald-500/40 tracking-widest inline-block badge-glow-infinito"
+            >
+              🛡️ GARANTIA DE INFRAESTRUTURA & SEGURANÇA OPERACIONAL
             </span>
-            <h2 class="font-serif font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
-              Desenhado por quem viveu a operação da base até a liderança
+            <h2
+              class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wide text-white glow-left-right"
+            >
+              Por que a Engenharia da Fluxus Não Corre Risco de Banimento?
             </h2>
-            <p class="text-slate-300 text-lg leading-relaxed">
-              Sob a liderança de <strong>Fabio Roberti Costa - CTO, Scrum Master e Arquiteto de Soluções</strong>, a Fluxus Agile combina mais de 30 anos de experiência real em gestão e liderança de equipe em A&B, Hotelaria e Varejo com a velocidade da tecnologia ágil.
-            </p>
-            <p class="text-slate-400 text-base leading-relaxed">
-              Entregamos ferramentas práticas que funcionam no WhatsApp, permitindo que a sua empresa cuide com excelência do seu cliente interno.
+            <p class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
+              Enquanto ferramentas amadoras usam conexões de QR Code piratas que fazem as empresas perderem seus chips do dia para a noite, a Fluxus opera na nuvem oficial da Meta.
             </p>
           </div>
 
-        <div class="bg-[#030712] p-8 rounded-3xl border border-slate-800 text-center space-y-4">
-  <!-- FOTO DE PERFIL AQUI -->
-  <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-agileAmber shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-    <img src="./src/images/fabio-perfil.png" alt="Fabio Roberti Costa" class="w-full h-full object-cover" />
-  </div>
+          <!-- TABELA COMPARATIVA -->
+          <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- COLUNA PIRATA / AMADORA -->
+            <div class="bg-red-950/20 border-2 border-red-500/40 p-8 rounded-3xl space-y-4 text-left relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-red-600 text-white font-black text-[10px] uppercase px-4 py-1 rounded-bl-xl">
+                Risco Alto
+              </div>
+              <h3 class="font-black text-xl text-red-400 uppercase flex items-center gap-2">
+                <span>⚠️</span> Sistemas Amadores (QR Code)
+              </h3>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-red-500 font-bold">✕</span>
+                  <span>Conexão via QR Code simulando WhatsApp Web (detectada pela IA da Meta).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-500 font-bold">✕</span>
+                  <span>Risco iminente de banimento definitivo do chip e perda de todo o histórico.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-500 font-bold">✕</span>
+                  <span>Depende de celular ligado, bateria carregada e Wi-Fi estável.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-500 font-bold">✕</span>
+                  <span>Sem garantia de entrega e vulnerável a quedas frequentes do servidor.</span>
+                </li>
+              </ul>
+            </div>
 
-  <div>
-    <h3 class="font-black text-2xl text-white">Fabio Roberti Costa</h3>
-    <p class="text-xs font-bold text-agileAmber uppercase tracking-wider">Diretor de Tecnologia - CTO</p>
-    <p class="text-xs text-slate-400 mt-1">Arquiteto de Soluções Ágeis & Scrum Master</p>
-  </div>
-  
-  <div class="pt-2 border-t border-slate-800 text-xs text-slate-300 space-y-1 text-left">
-    <p>✔ Ex-Gerente Geral Multi-Unidades</p>
-    <p>✔ Gestão de Pessoas & Retenção de Equipe</p>
-    <p>✔ Atuação no Brasil e nos Estados Unidos</p>
-  </div>
-</div>
+            <!-- COLUNA FLUXUS OFICIAL -->
+            <div class="bg-emerald-950/20 border-2 border-emerald-500 p-8 rounded-3xl space-y-4 text-left relative overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+              <div class="absolute top-0 right-0 bg-emerald-500 text-slate-950 font-black text-[10px] uppercase px-4 py-1 rounded-bl-xl">
+                100% Protegido
+              </div>
+              <h3 class="font-black text-xl text-emerald-400 uppercase flex items-center gap-2">
+                <span>✅</span> Engenharia Fluxus (Cloud API)
+              </h3>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-100">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Conexão direta na WhatsApp Business Cloud API Oficial da Meta.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Zero risco de banimento por tecnologia</strong>. Seu número homologado na nuvem.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Funciona 24/7 em servidores de nuvem de alta disponibilidade sem precisar de celular.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Conexão nativa via n8n com seu CRM, planilhas Excel e Agentes de IA (OpenAI/Claude).</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <!-- SEÇÃO: IMPLANTAÇÃO ÁGIL 100% NO WHATSAPP -->
+      <section
+        id="implantacao-agile"
+        class="py-16 bg-[#050b16] border-t-2 border-slate-800"
+      >
+        <div
+          class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 text-center"
+        >
+          <div class="max-w-5xl mx-auto space-y-3 mb-12">
+            <span
+              class="bg-amber-500/10 text-amber-400 font-black text-xs uppercase px-5 py-2 rounded-full border border-amber-500/40 tracking-widest inline-block badge-glow-infinito"
+            >
+              ⚡ SEM BUROCRACIA | SEM PERDA DE TEMPO ⚡
+            </span>
+            <h2
+              class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider text-white leading-tight glow-right-left whitespace-normal lg:whitespace-nowrap"
+            >
+              Implantação Ágil 100% no WhatsApp
+            </h2>
+            <p
+              class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed"
+            >
+              Sem parar sua rotina, entendemos como sua empresa funciona e criamos seu atendimento automático no WhatsApp de forma simples e rápida.
+            </p>
+          </div>
 
-  <!-- POP-UPS / MODAIS INTERATIVOS DA SEÇÃO 1 (FILOSOFIA) -->
+          <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div
+              onclick="openModal('modal-impl-1')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-indigo-500 card-hover-effect shadow-xl group"
+            >
+              <div
+                class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-black text-2xl border border-indigo-500/40 group-hover:scale-110 transition duration-300"
+              >
+                💬
+              </div>
+              <h3
+                class="font-black text-lg text-white uppercase tracking-tight"
+              >
+                Zero Reuniões Longas
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Tabelas de preços, fluxos de atendimento, regras de conduta e cardápios/serviços enviados por simples mensagens de texto e áudio no WhatsApp.
+              </p>
+              <div class="pt-2 flex items-center justify-between text-xs text-indigo-400 font-bold uppercase">
+                <span>Saiba Mais ➔</span>
+                <span class="bg-indigo-500/20 px-2 py-1 rounded">Clique</span>
+              </div>
+            </div>
 
-  <!-- MODAL: ATENDIMENTO REPETITIVO (ATUALIZAÇÕES) -->
-  <div id="modal-repetitivo" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-agileBlue uppercase">Como Funciona a Atualização do Conteúdo?</h3>
-        <button onclick="closeModal('modal-repetitivo')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
-      </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <p class="text-base text-white font-semibold">
-          Sua empresa tem total autonomia e flexibilidade para escolher o que é respondido no WhatsApp!
+            <div
+              onclick="openModal('modal-impl-2')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-amber-500 card-hover-effect shadow-xl group"
+            >
+              <div
+                class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-2xl border border-amber-500/40 group-hover:scale-110 transition duration-300"
+              >
+                👥
+              </div>
+              <h3
+                class="font-black text-lg text-white uppercase tracking-tight"
+              >
+                Sem Sobrecarregar o Proprietário
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                O dono do negócio não perde tempo. Alinhamos a parametrização do n8n e as regras da automação diretamente com o seu
+                <strong class="text-white">gerente ou líder operacional</strong>.
+              </p>
+              <div class="pt-2 flex items-center justify-between text-xs text-amber-400 font-bold uppercase">
+                <span>Saiba Mais ➔</span>
+                <span class="bg-amber-500/20 px-2 py-1 rounded">Clique</span>
+              </div>
+            </div>
+
+            <div
+              onclick="openModal('modal-impl-3')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-8 rounded-3xl space-y-4 hover:border-emerald-500 card-hover-effect shadow-xl group"
+            >
+              <div
+                class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-2xl border border-emerald-500/40 group-hover:scale-110 transition duration-300"
+              >
+                📲
+              </div>
+              <h3
+                class="font-black text-lg text-white uppercase tracking-tight"
+              >
+                Treinamento no próprio WhatsApp
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Sua equipe aprende a utilizar os robôs, acessar o CRM e consultar informações com vídeos explicativos diretos de 2 minutos no próprio WhatsApp.
+              </p>
+              <div class="pt-2 flex items-center justify-between text-xs text-emerald-400 font-bold uppercase">
+                <span>Saiba Mais ➔</span>
+                <span class="bg-emerald-500/20 px-2 py-1 rounded">Clique</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SEÇÃO: FILOSOFIA & CARDS CLICÁVEIS -->
+      <section
+        id="manifesto"
+        class="py-16 md:py-20 bg-slate-900/80 border-y-2 border-slate-800 text-white"
+      >
+        <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+          <div class="max-w-5xl mx-auto text-center space-y-4 mb-12">
+            <span
+              class="bg-agileAmber/10 text-agileAmber font-black text-xs uppercase px-5 py-2 rounded-full border border-agileAmber/40 tracking-widest inline-block badge-glow-infinito"
+            >
+              🌱 ENGENHARIA DE INTELIGÊNCIA OPERACIONAL • CLIQUE PARA DETALHES
+            </span>
+            <h2
+              class="font-serif font-black text-xl sm:text-2xl lg:text-3xl uppercase tracking-wider text-white glow-center-out whitespace-normal lg:whitespace-nowrap"
+            >
+              Ajudamos sua empresa a cuidar do seu cliente interno!
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+              Nós não substituímos o seu RH e não contratamos ninguém no seu lugar. <br>Nós entregamos a melhor engenharia automatizada para que a sua equipe trabalhe <br>com leveza e retenha os melhores talentos.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            <!-- CARD 1 -->
+            <div
+              onclick="openModal('modal-repetitivo')"
+              class="cursor-pointer bg-[#030712] border-2 border-slate-800 p-8 rounded-3xl flex flex-col justify-between card-hover-effect hover:border-agileBlue group relative overflow-hidden shadow-xl"
+            >
+              <div class="space-y-6">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-agileBlue/20 text-agileBlue flex items-center justify-center font-black text-2xl border border-agileBlue/40 group-hover:scale-110 transition duration-300"
+                >
+                  💬
+                </div>
+                <h3
+                  class="font-black text-lg text-white uppercase tracking-tight group-hover:text-agileBlue transition"
+                >
+                  Atendimento Repetitivo
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Respostas automáticas no WhatsApp para dúvidas recorrentes de escala, atestados, holerites e normas internas, além de integração direta com seu CRM.
+                </p>
+              </div>
+              <div
+                class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-agileBlue font-black uppercase tracking-wider"
+              >
+                <span>Como funciona a atualização? ➔</span>
+                <span
+                  class="bg-agileBlue/20 px-3 py-1 rounded-full border border-agileBlue/40"
+                  >Clique Aqui</span
+                >
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div
+              onclick="openModal('modal-valorizacao')"
+              class="cursor-pointer bg-[#030712] border-2 border-slate-800 p-8 rounded-3xl flex flex-col justify-between card-hover-effect hover:border-agileAmber group relative overflow-hidden shadow-xl"
+            >
+              <div class="space-y-6">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-agileAmber/20 text-agileAmber flex items-center justify-center font-black text-2xl border border-agileAmber/40 group-hover:scale-110 transition duration-300"
+                >
+                  ❤️
+                </div>
+                <h3
+                  class="font-black text-lg text-white uppercase tracking-tight group-hover:text-agileAmber transition"
+                >
+                  Valorização Humana
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Mais tempo livre para a liderança dar atenção presencial ao colaborador e entender suas necessidades enquanto a IA cuida da burocracia.
+                </p>
+              </div>
+              <div
+                class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-agileAmber font-black uppercase tracking-wider"
+              >
+                <span>Ver exemplos de ações ➔</span>
+                <span
+                  class="bg-agileAmber/20 px-3 py-1 rounded-full border border-agileAmber/40"
+                  >Clique Aqui</span
+                >
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div
+              onclick="openModal('modal-banco-talentos')"
+              class="cursor-pointer bg-[#030712] border-2 border-slate-800 p-8 rounded-3xl flex flex-col justify-between card-hover-effect hover:border-emerald-500 group relative overflow-hidden shadow-xl"
+            >
+              <div class="space-y-6">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-2xl border border-emerald-500/40 group-hover:scale-110 transition duration-300"
+                >
+                  📁
+                </div>
+                <h3
+                  class="font-black text-lg text-white uppercase tracking-tight group-hover:text-emerald-400 transition"
+                >
+                  Banco de Talentos 24/7
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Recebimento e triagem contínua de currículos no WhatsApp via n8n para você selecionar rapidamente os melhores candidatos no seu painel CRM.
+                </p>
+              </div>
+              <div
+                class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-emerald-400 font-black uppercase tracking-wider"
+              >
+                <span>Entender o processo ➔</span>
+                <span
+                  class="bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/40"
+                  >Clique Aqui</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SEÇÃO DE APOIO AO RH -->
+      <section id="esteira-rh" class="py-16 bg-[#030712]">
+        <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+          <div class="text-center max-w-5xl mx-auto space-y-3 mb-12">
+            <span
+              class="bg-agileBlue/10 text-agileBlue font-black text-xs uppercase px-5 py-2 rounded-full border border-agileBlue/40 tracking-widest inline-block badge-glow-infinito"
+            >
+              🚀 FERRAMENTAS DE TECNOLOGIA PARA SUA EQUIPE
+            </span>
+            <h2
+              class="font-serif font-black text-xl sm:text-2xl lg:text-3xl uppercase tracking-wide text-white glow-left-right leading-tight"
+            >
+              NÓS NÃO CONTRATAMOS NINGUÉM.
+              AJUDAMOS A SUA EMPRESA CONTRATAR PESSOAL, COM TECNOLOGIA!
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
+              A decisão final é sempre sua. Entregamos o motor de triagem no n8n e criamos a sua <strong>Landing Page de Onboarding personalizada</strong> para engajar os novos colaboradores desde o primeiro dia.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-4 gap-6">
+            <div
+              onclick="openModal('modal-step-1')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-6 rounded-3xl space-y-3 hover:border-agileBlue card-hover-effect transition"
+            >
+              <span class="text-2xl font-black text-agileBlue">01</span>
+              <h3 class="font-black text-base text-white uppercase">
+                Captação na Palma da Mão
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Coleta e organização automática de dados de candidatos via Meta Cloud API diretamente no seu CRM.
+              </p>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+            </div>
+            <div
+              onclick="openModal('modal-step-2')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-6 rounded-3xl space-y-3 hover:border-agileBlue card-hover-effect transition"
+            >
+              <span class="text-2xl font-black text-agileBlue">02</span>
+              <h3 class="font-black text-base text-white uppercase">
+                Triagem com IA & n8n
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Perguntas qualificatórias automatizadas para seu RH escolher de forma rápida os melhores perfis.
+              </p>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+            </div>
+            <div
+              onclick="openModal('modal-step-3')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-6 rounded-3xl space-y-3 hover:border-agileBlue card-hover-effect transition"
+            >
+              <span class="text-2xl font-black text-agileBlue">03</span>
+              <h3 class="font-black text-base text-white uppercase">
+                Landing Page Onboard
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Desenvolvimento em Vibe Coding da sua página exclusiva com cultura, Missão e boas-vindas.
+              </p>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+            </div>
+            <div
+              onclick="openModal('modal-step-4')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-slate-800 p-6 rounded-3xl space-y-3 hover:border-agileBlue card-hover-effect transition"
+            >
+              <span class="text-2xl font-black text-agileBlue">04</span>
+              <h3 class="font-black text-base text-white uppercase">
+                Módulos de Capacitação
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Envio de materiais e orientações de trabalho no celular do colaborador sem depender de papel.
+              </p>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SEÇÃO DE VERTICAIS (ECOSSISTEMA) -->
+      <section
+        id="ecossistema"
+        class="py-20 bg-[#070d18] border-t-2 border-slate-800"
+      >
+        <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+          <div class="text-center max-w-5xl mx-auto space-y-3 mb-12">
+            <span
+              class="bg-agileAmber/10 text-agileAmber font-black text-xs uppercase px-5 py-2 rounded-full border border-agileAmber/40 tracking-widest inline-block badge-glow-infinito"
+            >
+              🎯 NOSSAS SOLUÇÕES ESPECIALIZADAS POR SETOR
+            </span>
+            <h2
+              class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wide text-white glow-top-down whitespace-normal lg:whitespace-nowrap"
+            >
+              EXPLORE NOSSO ECOSSISTEMA DE VERTICAIS
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
+              Clique no modelo do seu nicho para abrir o modal com os entregáveis detalhados ou <br />acesse a Landing Page dedicada.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- CARD 1: FLUXUS RH -->
+            <div
+              class="bg-[#0b1322] border-2 border-indigo-500/40 p-6 rounded-3xl space-y-5 hover:border-indigo-400 card-hover-effect shadow-xl flex flex-col justify-between"
+            >
+              <div class="space-y-3">
+                <div
+                  class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-black text-2xl"
+                >
+                  👥
+                </div>
+                <div>
+                  <h3
+                    class="font-serif font-black text-xl text-white uppercase"
+                  >
+                    Fluxus RH
+                  </h3>
+                  <p
+                    class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest"
+                  >
+                    PMEs | Empresas
+                  </p>
+                </div>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Suporte de atendimento ao colaborador e ferramentas de tecnologia para recrutamento e onboarding no WhatsApp.
+                </p>
+              </div>
+
+              <div class="space-y-2 pt-2">
+                <button
+                  type="button"
+                  onclick="openModal('modal-rh')"
+                  class="w-full py-2.5 bg-indigo-600/20 text-indigo-300 font-black text-xs uppercase tracking-wider rounded-xl border border-indigo-500/40 hover:bg-indigo-600 hover:text-white transition"
+                >
+                  Veja como Funciona 🔍
+                </button>
+
+                <a
+                  href="https://fabioroberticosta.github.io/fluxus-rh-carnes/"
+                  target="_blank"
+                  rel="noopener"
+                  class="w-full py-2 bg-red-600/30 text-red-300 font-black text-xs uppercase tracking-wider rounded-xl border border-red-500/50 hover:bg-red-600 hover:text-white transition flex items-center justify-center gap-2"
+                >
+                  <span>🥩</span> RH Açougues
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD 2: HOTELARIA -->
+            <div
+              onclick="openModal('modal-hotel')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-yellow-500/40 p-6 rounded-3xl space-y-5 hover:border-yellow-400 card-hover-effect shadow-xl flex flex-col justify-between"
+            >
+              <div class="space-y-3">
+                <div
+                  class="w-12 h-12 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-2xl font-black"
+                >
+                  🏨
+                </div>
+                <h3 class="font-serif font-black text-xl text-white uppercase">
+                  Fluxus Hotel
+                </h3>
+                <p
+                  class="text-[10px] font-bold text-yellow-400 uppercase tracking-widest"
+                >
+                  Hotelaria
+                </p>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Padronização de regras de atendimento para recepção, governança e restaurante, além do suporte direto no WhatsApp.
+                </p>
+              </div>
+              <div class="space-y-2 pt-2">
+                <button
+                  class="w-full py-2.5 bg-yellow-600/20 text-yellow-300 font-black text-xs uppercase tracking-wider rounded-xl border border-yellow-500/40 hover:bg-yellow-600 hover:text-slate-950 transition"
+                >
+                  Veja como Funciona 🔍
+                </button>
+              </div>
+            </div>
+
+            <!-- CARD 3: GASTRONOMIA -->
+            <div
+              onclick="openModal('modal-ab')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-orange-500/40 p-6 rounded-3xl space-y-5 hover:border-orange-400 card-hover-effect shadow-xl flex flex-col justify-between"
+            >
+              <div class="space-y-3">
+                <div
+                  class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-2xl font-black"
+                >
+                  🍕
+                </div>
+                <h3 class="font-serif font-black text-xl text-white uppercase">
+                  Fluxus A&B
+                </h3>
+                <p
+                  class="text-[10px] font-bold text-orange-400 uppercase tracking-widest"
+                >
+                  Gastronomia
+                </p>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Tecnologia para ajudar na contratação do pessoal de salão e cozinha, padronização de procedimentos e onboarding.
+                </p>
+              </div>
+              <div class="space-y-2 pt-2">
+                <button
+                  class="w-full py-2.5 bg-orange-600/20 text-orange-300 font-black text-xs uppercase tracking-wider rounded-xl border border-orange-500/40 hover:bg-orange-600 hover:text-white transition"
+                >
+                  Veja como Funciona 🔍
+                </button>
+              </div>
+            </div>
+
+            <!-- CARD 4: CLÍNICAS & CONSULTÓRIOS -->
+            <div
+              onclick="openModal('modal-go')"
+              class="cursor-pointer bg-[#0b1322] border-2 border-emerald-500/40 p-6 rounded-3xl space-y-5 hover:border-emerald-400 card-hover-effect shadow-xl flex flex-col justify-between"
+            >
+              <div class="space-y-3">
+                <div
+                  class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-black"
+                >
+                  🏥
+                </div>
+                <h3 class="font-serif font-black text-xl text-white uppercase">
+                  Fluxus GO
+                </h3>
+                <p
+                  class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest"
+                >
+                  Clínicas & Consultórios
+                </p>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Apoio para recepcionistas e secretárias, protocolos de conduta e automação de agendamentos no WhatsApp Oficial.
+                </p>
+              </div>
+              <div class="space-y-2 pt-2">
+                <button
+                  class="w-full py-2.5 bg-emerald-600/20 text-emerald-300 font-black text-xs uppercase tracking-wider rounded-xl border border-emerald-500/40 hover:bg-emerald-600 hover:text-slate-950 transition"
+                >
+                  Veja como Funciona 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SEÇÃO DE LIDERANÇA TÉCNICA -->
+      <section
+        id="lideranca"
+        class="py-16 bg-[#030712] border-t-2 border-slate-800"
+      >
+        <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16">
+          <div
+            class="bg-[#0b1322] border-2 border-slate-800 rounded-[36px] p-8 sm:p-12 lg:p-14 grid lg:grid-cols-3 gap-10 items-center shadow-2xl"
+          >
+            <div class="space-y-4 lg:col-span-2">
+              <span
+                class="bg-agileBlue/10 text-agileBlue font-black text-xs uppercase px-5 py-2 rounded-full border border-agileBlue/40 tracking-widest inline-block badge-glow-infinito"
+              >
+                👨‍💼 LIDERANÇA TÉCNICA & ENGENHARIA DE INTELIGÊNCIA OPERACIONAL
+              </span>
+              <h2
+                class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl uppercase text-white leading-tight glow-center-out"
+              >
+                DESENHADO POR QUEM VIVEU A OPERAÇÃO DA BASE ATÉ A LIDERANÇA
+              </h2>
+              <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                Sob a liderança de
+                <strong
+                  >Fabio Roberti Costa - CTO, Lead Vibe Coder, Scrum Master e Arquiteto de Soluções</strong
+                >, a Fluxus combina mais de 30 anos de experiência real em gestão e liderança de equipe em A&B, Hotelaria e Varejo com a velocidade do Vibe Coding e a orquestração de backend via n8n.
+              </p>
+              <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Entregamos engenharia prática na WhatsApp Cloud API Oficial da Meta e CRMs, permitando que a sua empresa cuide com excelência do seu cliente interno e escale operações com total estabilidade.
+              </p>
+            </div>
+
+            <div
+              class="bg-[#030712] p-6 rounded-3xl border border-slate-800 text-center space-y-4"
+            >
+              <div
+                class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-agileAmber shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+              >
+                <img
+                  src="./src/images/fabio-perfil.png"
+                  alt="Fabio Roberti Costa"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div>
+                <h3 class="font-black text-xl text-white">
+                  Fabio Roberti Costa
+                </h3>
+                <p
+                  class="text-xs font-bold text-agileAmber uppercase tracking-wider"
+                >
+                  Founder, CTO & Lead Vibe Coder
+                </p>
+                <p class="text-[11px] text-slate-400 mt-1">
+                  Arquiteto de Soluções Ágeis, PSM I & AI Engineer
+                </p>
+              </div>
+
+              <div
+                class="pt-2 border-t border-slate-800 text-xs text-slate-300 space-y-1 text-left"
+              >
+                <p>✔ Ex-Gerente Geral Multi-Unidades (EUA & Brasil)</p>
+                <p>✔ Especialista em n8n, OpenAI & WhatsApp Cloud API</p>
+                <p>✔ Prototipagem Ágil via Vibe Coding & Tailwind CSS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAIS INTERATIVOS DE CONVENCIMENTO E DETALHAMENTO -->
+
+    <!-- MODAIS IMPLANTAÇÃO -->
+    <div id="modal-impl-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-indigo-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-indigo-400 uppercase">Zero Reuniões Longas</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Nossa metodologia elimina totalmente a perda de tempo da sua diretoria. Coletamos fotos, tabelas de preço, cardápios e procedimentos internos por áudios de 30 segundos no WhatsApp.
         </p>
-        <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 space-y-3">
-          <h4 class="font-black text-agileAmber uppercase text-xs tracking-wider">Você tem duas opções simples de atualização:</h4>
-          <ul class="space-y-2 text-xs">
-            <li><strong class="text-white">Opção A (Atualização Própria do RH):</strong> O próprio profissional de RH da sua empresa acessa um painel simples e atualiza escalas, avisos e regras em menos de 1 minuto.</li>
-            <li><strong class="text-white">Opção B (Suporte Fluxus):</strong> O RH envia o novo conteúdo em texto ou áudio direto para o nosso suporte no WhatsApp e nós fazemos a atualização imediatamente para você.</li>
+        <ul class="text-xs text-slate-300 space-y-1 list-disc pl-4">
+          <li>Configuração completa em até 48 horas no n8n.</li>
+          <li>Inclusão de regras personalizadas do seu negócio.</li>
+          <li>Aprovação rápida e direta no celular.</li>
+        </ul>
+        <button onclick="closeModal('modal-impl-1')" class="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl text-xs uppercase">Entendi ⚡</button>
+      </div>
+    </div>
+
+    <div id="modal-impl-2" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-amber-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-amber-400 uppercase">Sem Sobrecarregar o Proprietário</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          O dono do negócio precisa focar em estratégia e crescimento. Nós lidamos diretamente com os seus líderes operacionais e gerentes para alinhar cada detalhe.
+        </p>
+        <ul class="text-xs text-slate-300 space-y-1 list-disc pl-4">
+          <li>Alinhamento técnico direto com os gerentes.</li>
+          <li>Sem necessidade de conhecimentos em programação.</li>
+          <li>Relatórios resumidos enviados diretamente ao proprietário.</li>
+        </ul>
+        <button onclick="closeModal('modal-impl-2')" class="w-full py-3 bg-amber-500 text-slate-950 font-bold rounded-xl text-xs uppercase">Entendi ⚡</button>
+      </div>
+    </div>
+
+    <div id="modal-impl-3" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-emerald-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-emerald-400 uppercase">Treinamento no próprio WhatsApp</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Toda a capacitação da sua equipe ocorre dentro do aplicativo que eles já utilizam todos os dias. Sem necessidade de instalar novas ferramentas.
+        </p>
+        <ul class="text-xs text-slate-300 space-y-1 list-disc pl-4">
+          <li>Vídeos curtos e objetivos de 2 minutos.</li>
+          <li>Checklists e manuais interativos no próprio celular.</li>
+          <li>Engajamento imediato dos novos e antigos colaboradores.</li>
+        </ul>
+        <button onclick="closeModal('modal-impl-3')" class="w-full py-3 bg-emerald-500 text-slate-950 font-bold rounded-xl text-xs uppercase">Entendi ⚡</button>
+      </div>
+    </div>
+
+    <!-- MODAIS ESTEIRA RH -->
+    <div id="modal-step-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">01. Captação na Palma da Mão</h3>
+        <p class="text-xs text-slate-300">Receba currículos 24 horas por dia diretamente no WhatsApp Oficial. Elimine papéis perdidos, e-mails esquecidos e contatos soltos, com integração direta no seu CRM.</p>
+        <button onclick="closeModal('modal-step-1')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+      </div>
+    </div>
+
+    <div id="modal-step-2" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">02. Triagem com IA & n8n</h3>
+        <p class="text-xs text-slate-300">O Agente de IA no n8n faz as perguntas certas antes de repassar os contatos ao RH: disponibilidade de horários, experiência prévia e localização.</p>
+        <button onclick="closeModal('modal-step-2')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+      </div>
+    </div>
+
+    <div id="modal-step-3" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">03. Landing Page Onboard</h3>
+        <p class="text-xs text-slate-300">Desenvolvemos uma página visualmente incrível com a história, cultura e diretrizes da sua empresa para encantar o novo funcionário desde o dia 1.</p>
+        <button onclick="closeModal('modal-step-3')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+      </div>
+    </div>
+
+    <div id="modal-step-4" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">04. Módulos de Capacitação</h3>
+        <p class="text-xs text-slate-300">Envie treinamentos padronizados diretamente no WhatsApp. Garanta que toda a equipe siga exatamente o mesmo padrão de excelência.</p>
+        <button onclick="closeModal('modal-step-4')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+      </div>
+    </div>
+
+    <!-- MODAIS FILOSOFIA -->
+    <div
+      id="modal-repetitivo"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-agileBlue uppercase">
+            Como Funciona a Atualização do Conteúdo?
+          </h3>
+          <button
+            onclick="closeModal('modal-repetitivo')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <p class="text-sm text-white font-semibold">
+            Sua empresa tem total autonomia e flexibilidade para escolher o que é respondido no WhatsApp!
+          </p>
+          <div
+            class="bg-[#030712] p-4 rounded-xl border border-slate-800 space-y-3"
+          >
+            <h4
+              class="font-black text-agileAmber uppercase text-xs tracking-wider"
+            >
+              Você tem duas opções simples de atualização:
+            </h4>
+            <ul class="space-y-2 text-xs">
+              <li>
+                <strong class="text-white"
+                  >Opção A (Atualização Própria do RH / CRM):</strong
+                >
+                O próprio profissional de RH da sua empresa acessa um painel simples ou planilha e atualiza escalas, avisos e regras em menos de 1 minuto.
+              </li>
+              <li>
+                <strong class="text-white">Opção B (Suporte Fluxus):</strong> O RH envia o novo conteúdo em texto ou áudio direto para o nosso suporte no WhatsApp e nós atualizamos o motor do n8n imediatamente para você.
+              </li>
+            </ul>
+          </div>
+          <p class="text-xs text-slate-400">
+            Dessa forma, as informações sobre a folha de pagamento, holerites, trocas de turno e atestados continuam sempre corretas sem exigir esforço técnico do seu time.
+          </p>
+        </div>
+        <button
+          onclick="closeModal('modal-repetitivo')"
+          class="w-full py-4 bg-agileBlue text-white font-black uppercase rounded-xl hover:bg-blue-600 transition"
+        >
+          Entendi ⚡
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="modal-valorizacao"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-agileAmber rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-agileAmber uppercase">
+            Ações Práticas de Valorização
+          </h3>
+          <button
+            onclick="closeModal('modal-valorizacao')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <p class="text-sm text-white font-semibold">
+            Com as ocorrências repetitivas resolvidas pela tecnologia no WhatsApp, o seu RH ganha tempo para aplicar ações reais de valorização do cliente interno:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-xs text-slate-300">
+            <li>Reuniões presenciais de feedback e escuta ativa com colaboradores.</li>
+            <li>Programas de integração e celebração de aniversariantes do mês.</li>
+            <li>Acompanhamento de adaptação de novos funcionários após o onboarding.</li>
+            <li>Pausas de bem-estar e alinhamento de plano de carreira individual.</li>
+          </ul>
+          <div
+            class="bg-[#030712] p-4 rounded-xl border border-slate-800 space-y-2"
+          >
+            <p class="text-xs font-bold text-agileAmber">
+              Nós nos colocamos à disposição para estruturar a sua tecnologia!
+            </p>
+            <p class="text-xs text-slate-400">
+              A escolha dos módulos adicionais e da Landing Page de Onboarding é feita de acordo com o plano ideal para o tamanho da sua empresa.
+            </p>
+          </div>
+        </div>
+        <button
+          onclick="closeModal('modal-valorizacao')"
+          class="w-full py-4 bg-agileAmber text-slate-950 font-black uppercase rounded-xl hover:bg-amber-400 transition"
+        >
+          Fechar ⚡
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="modal-banco-talentos"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-emerald-500 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-emerald-400 uppercase">
+            Tecnologia para Captação de Talentos
+          </h3>
+          <button
+            onclick="closeModal('modal-banco-talentos')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <p class="text-sm text-white font-semibold">
+            Como nossa ferramenta ajuda sua empresa no processo seletivo:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-xs text-slate-300">
+            <li>O robô na WhatsApp Cloud API recebe o currículo do candidato 24 horas por dia.</li>
+            <li>Faz perguntas qualificatórias básicas via n8n (experiência, bairro, disponibilidade).</li>
+            <li>Organiza as respostas em um banco de talentos limpo no seu CRM para o RH analisar.</li>
+            <li>A decisão da contratação e a entrevista presencial continuam sendo 100% da sua empresa.</li>
           </ul>
         </div>
-        <p class="text-xs text-slate-400">
-          Dessa forma, as informações sobre a folha de pagamento, holerites, trocas de turno e atestados continuam sempre corretas sem exigir esforço técnico do seu time.
-        </p>
+        <button
+          onclick="closeModal('modal-banco-talentos')"
+          class="w-full py-4 bg-emerald-500 text-slate-950 font-black uppercase rounded-xl hover:bg-emerald-400 transition"
+        >
+          Entendi ⚡
+        </button>
       </div>
-      <button onclick="closeModal('modal-repetitivo')" class="w-full py-4 bg-agileBlue text-white font-black uppercase rounded-xl hover:bg-blue-600 transition">Entendi ⚡</button>
     </div>
-  </div>
 
-  <!-- MODAL: VALORIZAÇÃO HUMANA (EXEMPLOS DE AÇÕES) -->
-  <div id="modal-valorizacao" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-agileAmber rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-agileAmber uppercase">Ações Práticas de Valorização</h3>
-        <button onclick="closeModal('modal-valorizacao')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
+    <!-- MODAIS VERTICAIS -->
+    <div
+      id="modal-rh"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-indigo-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-indigo-400 uppercase">
+            Fluxus RH
+          </h3>
+          <button
+            onclick="closeModal('modal-rh')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Central de Tira-dúvidas de Colaboradores no WhatsApp para ocorrências fáceis.</li>
+            <li>Tecnologia de captação automática de currículos e banco de talentos no WhatsApp.</li>
+            <li>Desenvolvimento da Landing Page de Onboarding personalizada para a sua empresa.</li>
+          </ul>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
+          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+            <p>✔ Recrutamento | Seleção | Treinamento pelo WhatsApp Cloud API.</p>
+            <p>✔ Atendimento de dúvidas frequentes do colaborador ativo no WhatsApp.</p>
+            <p>✔ Recebimento de currículos testado com envio das informações ao CRM/RH.</p>
+            <p>✔ Landing Page de Onboarding desenvolvida e validada pelo cliente.</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20RH."
+          target="_blank"
+          class="block text-center w-full py-4 bg-indigo-600 text-white font-black uppercase rounded-xl hover:bg-indigo-500 transition"
+          >Consultar no WhatsApp ⚡</a
+        >
       </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <p class="text-base text-white font-semibold">
-          Com as ocorrências repetitivas resolvidas pela tecnologia no WhatsApp, o seu RH ganha tempo para aplicar ações reais de valorização do cliente interno:
-        </p>
-        <ul class="list-disc pl-5 space-y-2 text-xs text-slate-300">
-          <li>Reuniões presenciais de feedback e escuta ativa com colaboradores.</li>
-          <li>Programas de integração e celebração de aniversariantes do mês.</li>
-          <li>Acompanhamento de adaptação de novos funcionários após o onboarding.</li>
-          <li>Pausas de bem-estar e alinhamento de plano de carreira individual.</li>
-        </ul>
-        <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 space-y-2">
-          <p class="text-xs font-bold text-agileAmber">Nós nos colocamos à disposição para estruturar a sua tecnologia!</p>
-          <p class="text-xs text-slate-400">
-            A escolha dos módulos adicionais e da Landing Page de Onboarding é feita de acordo com o plano ideal para o tamanho da sua empresa.
+    </div>
+
+    <div
+      id="modal-hotel"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-yellow-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-yellow-400 uppercase">
+            Fluxus Hotel
+          </h3>
+          <button
+            onclick="closeModal('modal-hotel')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Padronização das orientações para recepção, camareiras e governança no WhatsApp.</li>
+            <li>Respostas automáticas para regras de check-in, horários de café e normas internas.</li>
+            <li>Página de Onboarding para recepcionistas e equipe da hotelaria.</li>
+          </ul>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
+          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+            <p>✔ Guia de conduta da pousada acessível pelo time operacional no WhatsApp.</p>
+            <p>✔ Respostas automáticas de procedimentos validadas pela gestão.</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20Hotel."
+          target="_blank"
+          class="block text-center w-full py-4 bg-yellow-500 text-slate-950 font-black uppercase rounded-xl hover:bg-yellow-400 transition"
+          >Consultar no WhatsApp ⚡</a
+        >
+      </div>
+    </div>
+
+    <div
+      id="modal-ab"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-orange-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-orange-400 uppercase">
+            Fluxus A&B
+          </h3>
+          <button
+            onclick="closeModal('modal-ab')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Tecnologia para captação e contratação do pessoal de salão (garçons, cumins) e cozinha.</li>
+            <li>Padronização de horários de turno, regras de higiene e checklists no WhatsApp.</li>
+            <li>Landing Page de Onboarding e treinamento de recepção para a brigada.</li>
+          </ul>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
+          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+            <p>✔ Canal de captação de currículos de salão/cozinha ativo no WhatsApp.</p>
+            <p>✔ Manual de boas práticas da casa acessível pelo time no próprio celular.</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20A%26B."
+          target="_blank"
+          class="block text-center w-full py-4 bg-orange-600 text-white font-black uppercase rounded-xl hover:bg-orange-500 transition"
+          >Consultar no WhatsApp ⚡</a
+        >
+      </div>
+    </div>
+
+    <div
+      id="modal-go"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-emerald-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-emerald-400 uppercase">
+            Fluxus GO
+          </h3>
+          <button
+            onclick="closeModal('modal-go')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Padronização do protocolo de atendimento para recepcionistas e secretárias no WhatsApp.</li>
+            <li>Agendamento automatizado de consultas com lembretes para evitar faltas de pacientes.</li>
+          </ul>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
+          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+            <p>✔ Protocolo de recepção médica/odontológica validado no WhatsApp da equipe.</p>
+            <p>✔ Agendamento automático e lembretes integrados com sucesso no CRM.</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20GO."
+          target="_blank"
+          class="block text-center w-full py-4 bg-emerald-500 text-slate-950 font-black uppercase rounded-xl hover:bg-emerald-400 transition"
+          >Consultar no WhatsApp ⚡</a
+        >
+      </div>
+    </div>
+
+    <!-- MODAL PRIVACIDADE & TERMOS (LGPD & DISCLAIMER META) -->
+    <div
+      id="modal-privacidade"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-slate-700 rounded-3xl max-w-3xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl"
+      >
+        <div
+          class="flex justify-between items-center border-b border-slate-800 pb-4"
+        >
+          <h3 class="font-serif font-black text-xl text-slate-200 uppercase">
+            Política de Privacidade & Avisos Legais
+          </h3>
+          <button
+            onclick="closeModal('modal-privacidade')"
+            class="text-slate-400 hover:text-white font-black text-2xl"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs sm:text-sm text-slate-300 text-left">
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider">1. Proteção de Dados e LGPD</h4>
+          <p class="text-xs leading-relaxed">
+            A <strong>FLUXUS TECNOLOGIA DA INFORMAÇÃO</strong> (CNPJ 18.647.981/0001-29) atua no tratamento de dados pessoais estritamente sob o consentimento dos titulares e em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Os dados coletados através do WhatsApp ou formulários (como nome, telefone e currículos) são utilizados exclusivamente para as finalidades de recrutamento, seleção e atendimento operacional solicitados pela empresa contratante.
+          </p>
+
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider">2. Isenção de Vínculo com a Meta Inc. (Disclaimer)</h4>
+          <p class="text-xs leading-relaxed">
+            Este site e as soluções de software desenvolvidas pela Fluxus utilizam as APIs Oficiais em nuvem fornecidas pela Meta Platforms, Inc. No entanto, a Fluxus é uma empresa independente de engenharia e consultoria tecnológica e <strong>não possui vínculo societário, patrocínio ou representação direta com o WhatsApp Inc. ou Meta Platforms Inc.</strong> Todas as marcas "WhatsApp", "Meta" e logotipos correlatos são de propriedade exclusiva de seus respectivos titulares.
+          </p>
+
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider">3. Governança e Infraestrutura de Dados</h4>
+          <p class="text-xs leading-relaxed">
+            Garantimos o isolamento das informações tratadas por meio de instâncias dedicadas e conexões encriptadas via HTTPS e TLS. Nossos clientes possuem total propriedade e controle sobre as chaves de API, banco de dados e dados cadastrais de seus colaboradores e candidatos.
           </p>
         </div>
+        <button
+          onclick="closeModal('modal-privacidade')"
+          class="w-full py-4 bg-slate-800 text-white font-black uppercase rounded-xl hover:bg-slate-700 transition"
+        >
+          Compreendido ⚡
+        </button>
       </div>
-      <button onclick="closeModal('modal-valorizacao')" class="w-full py-4 bg-agileAmber text-slate-950 font-black uppercase rounded-xl hover:bg-amber-400 transition">Fechar ⚡</button>
     </div>
-  </div>
 
-  <!-- MODAL: BANCO DE TALENTOS & SELEÇÃO -->
-  <div id="modal-banco-talentos" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-emerald-500 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto shadow-2xl">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-emerald-400 uppercase">Tecnologia para Captação de Talentos</h3>
-        <button onclick="closeModal('modal-banco-talentos')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
-      </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <p class="text-base text-white font-semibold">
-          Como nossa ferramenta ajuda sua empresa no processo seletivo:
-        </p>
-        <ul class="list-disc pl-5 space-y-2 text-xs text-slate-300">
-          <li>O robô no WhatsApp recebe o currículo do candidato 24 horas por dia.</li>
-          <li>Faz perguntas qualificatórias básicas (experiência, bairro, disponibilidade).</li>
-          <li>Organiza as respostas em um banco de talentos limpo para o seu RH analisar.</li>
-          <li>A decisão da contratação e a entrevista presencial continuam sendo 100% da sua empresa.</li>
-        </ul>
-      </div>
-      <button onclick="closeModal('modal-banco-talentos')" class="w-full py-4 bg-emerald-500 text-slate-950 font-black uppercase rounded-xl hover:bg-emerald-400 transition">Entendi ⚡</button>
-    </div>
-  </div>
-
-  <!-- MODAIS DE ESCOPO E DEFINITION OF DONE (DoD) DAS VERTICAIS -->
-  
-  <!-- MODAL RH -->
-  <div id="modal-rh" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-indigo-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-indigo-400 uppercase">Fluxus RH — Escopo & DoD</h3>
-        <button onclick="closeModal('modal-rh')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
-      </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <h4 class="font-black text-white uppercase text-base">📋 Entregáveis Inclusos no Escopo:</h4>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Central de Tira-dúvidas de Colaboradores no WhatsApp para ocorrências fáceis.</li>
-          <li>Tecnologia de captação automática de currículos e banco de talentos no Zap.</li>
-          <li>Desenvolvimento da Landing Page de Onboarding personalizada para a sua empresa.</li>
-        </ul>
-        <h4 class="font-black text-emerald-400 uppercase text-base pt-2">✅ Definition of Done (DoD - Critério de Aceite):</h4>
-        <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-          <p>✔ Atendimento de dúvidas frequentes do colaborador ativo no WhatsApp.</p>
-          <p>✔ Recebimento de currículos testado com envio das informações ao RH.</p>
-          <p>✔ Landing Page de Onboarding desenvolvida e validada pelo cliente.</p>
-        </div>
-      </div>
-      <a href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20RH." target="_blank" class="block text-center w-full py-4 bg-indigo-600 text-white font-black uppercase rounded-xl hover:bg-indigo-500 transition">Consultar no WhatsApp ⚡</a>
-    </div>
-  </div>
-
-  <!-- MODAL HOTEL -->
-  <div id="modal-hotel" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-yellow-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-yellow-400 uppercase">Fluxus Hotel — Escopo & DoD</h3>
-        <button onclick="closeModal('modal-hotel')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
-      </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <h4 class="font-black text-white uppercase text-base">📋 Entregáveis Inclusos no Escopo:</h4>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Padronização das orientações para recepção, camareiras e governança no WhatsApp.</li>
-          <li>Respostas automáticas para regras de check-in, horários de café e normas internas.</li>
-          <li>Página de Onboarding para recepcionistas e equipe da hotelaria.</li>
-        </ul>
-        <h4 class="font-black text-emerald-400 uppercase text-base pt-2">✅ Definition of Done (DoD - Critério de Aceite):</h4>
-        <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-          <p>✔ Guia de conduta da pousada acessível pelo time operacional no Zap.</p>
-          <p>✔ Respostas automáticas de procedimentos validadas pela gestão.</p>
-        </div>
-      </div>
-      <a href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20Hotel." target="_blank" class="block text-center w-full py-4 bg-yellow-500 text-slate-950 font-black uppercase rounded-xl hover:bg-yellow-400 transition">Consultar no WhatsApp ⚡</a>
-    </div>
-  </div>
-
-  <!-- MODAL A&B (GASTRONOMIA - AJUSTADO CONFORME SOLICITADO) -->
-  <div id="modal-ab" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-orange-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-orange-400 uppercase">Fluxus A&B — Escopo & DoD</h3>
-        <button onclick="closeModal('modal-ab')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
-      </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <h4 class="font-black text-white uppercase text-base">📋 Entregáveis Inclusos no Escopo:</h4>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Tecnologia para captação e contratação do pessoal de salão (garçons, cumins) e cozinha.</li>
-          <li>Padronização de horários de turno, regras de higiene e checklists no WhatsApp.</li>
-          <li>Landing Page de Onboarding e treinamento de recepção para a brigada.</li>
-        </ul>
-        <h4 class="font-black text-emerald-400 uppercase text-base pt-2">✅ Definition of Done (DoD - Critério de Aceite):</h4>
-        <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-          <p>✔ Canal de captação de currículos de salão/cozinha ativo no Zap.</p>
-          <p>✔ Manual de boas práticas da casa acessível pelo time no próprio celular.</p>
-        </div>
-      </div>
-      <a href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20A%26B." target="_blank" class="block text-center w-full py-4 bg-orange-600 text-white font-black uppercase rounded-xl hover:bg-orange-500 transition">Consultar no WhatsApp ⚡</a>
-    </div>
-  </div>
-
-  <!-- MODAL GO (CLÍNICAS) -->
-  <div id="modal-go" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-[#0b1322] border-2 border-emerald-500/50 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 text-white max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-4">
-        <h3 class="font-serif font-black text-2xl text-emerald-400 uppercase">Fluxus GO — Escopo & DoD</h3>
-        <button onclick="closeModal('modal-go')" class="text-slate-400 hover:text-white font-black text-2xl">✕</button>
-      </div>
-      <div class="space-y-4 text-sm text-slate-300">
-        <h4 class="font-black text-white uppercase text-base">📋 Entregáveis Inclusos no Escopo:</h4>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Padronização do protocolo de atendimento para recepcionistas e secretárias no Zap.</li>
-          <li>Agendamento automatizado de consultas com lembretes para evitar faltas de pacientes.</li>
-        </ul>
-        <h4 class="font-black text-emerald-400 uppercase text-base pt-2">✅ Definition of Done (DoD - Critério de Aceite):</h4>
-        <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-          <p>✔ Protocolo de recepção médica/odontológica validado no Zap da equipe.</p>
-          <p>✔ Agendamento automático e lembretes integrados com sucesso.</p>
-        </div>
-      </div>
-      <a href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20GO." target="_blank" class="block text-center w-full py-4 bg-emerald-500 text-slate-950 font-black uppercase rounded-xl hover:bg-emerald-400 transition">Consultar no WhatsApp ⚡</a>
-    </div>
-  </div>
-
-  <!-- FOOTER OFICIAL FLUXUS AGILE (TRADUZIDO + MELHORADO + SEM PARENTESES NO CNPJ) -->
-  <footer style="background-color: #03060a; color: #cbd5e1; border-top: 2px solid #0f172a; padding: 48px 0 24px 0; font-family: Arial, Helvetica, sans-serif; width: 100%;">
-    <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px;">
-      
-      <!-- COLUNA 1: MARCA & DADOS FISCAIS -->
-      <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 12px; text-align: left;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 42px; height: 42px; border-radius: 10px; overflow: hidden; background: #000000; border: 2px solid #1e293b; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <img src="src/images/favicon-fluxus.jpg" alt="Logo Fluxus" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.1);" onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887';" />
+    <!-- FOOTER OFICIAL -->
+    <footer
+      style="
+        background-color: #03060a;
+        color: #cbd5e1;
+        border-top: 2px solid #0f172a;
+        padding: 48px 0 24px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+      "
+    >
+      <div
+        class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+        "
+      >
+        <!-- COLUNA 1: MARCA & DADOS FISCAIS -->
+        <div
+          style="
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div
+              style="
+                width: 42px;
+                height: 42px;
+                border-radius: 10px;
+                overflow: hidden;
+                background: #000000;
+                border: 2px solid #1e293b;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              <img
+                src="./src/images/favicon-fluxus.jpg"
+                alt="Logo Fluxus"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  transform: scale(1.1);
+                "
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887';
+                "
+              />
+            </div>
+            <span
+              style="
+                font-size: 1.35rem;
+                font-weight: 900;
+                letter-spacing: -0.5px;
+                color: #ffffff;
+                text-transform: uppercase;
+              "
+            >
+              FLUXUS
+            </span>
           </div>
-          <span style="font-size: 1.35rem; font-weight: 900; letter-spacing: -0.5px; color: #ffffff; text-transform: uppercase;">
-            FLUXUS <strong style="color: #3b82f6; font-weight: 900;">AGILE</strong>
-          </span>
-        </div>
-        <!-- FRASE REFINADA SEM SIGLAS E FOCO NO CLIENTE INTERNO -->
-        <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin: 0; max-width: 380px;">
-          Transformamos o caos em boas memórias. Entregamos tecnologia simples no WhatsApp para agilizar o atendimento de rotina e ajudar a sua empresa a cuidar com excelência do seu cliente interno: o seu colaborador.
-        </p>
-        <!-- CNPJ FORMATADO COM ESPAÇO - ESPAÇO E SEM PARENTESES -->
-        <div style="font-size: 0.78rem; color: #64748b; font-weight: 600; margin-top: 4px;">
-          <div>FLUXUS AGILE TECNOLOGIA DA INFORMAÇÃO</div>
-          <div>CNPJ: 18.647.981/0001-29 - Caraguatatuba - SP</div>
-        </div>
-      </div>
-
-      <!-- COLUNA 2: CANAIS DE ATENDIMENTO & QR CODE -->
-      <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
-        <div style="display: flex; flex-direction: column; gap: 6px; align-items: center;">
-          <h4 style="font-size: 0.85rem; font-weight: 900; color: #ff9100; text-transform: uppercase; letter-spacing: 1px; margin: 0; height: 24px; display: flex; align-items: center;">
-            Canais de Atendimento
-          </h4>
-          <div style="display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; color: #e2e8f0; font-weight: 600;">
-            <div>TELEFONE / WHATSAPP: <span style="color: #00e676;">+55 12 3600-6887</span></div>
-            <div>E-MAIL: <span style="color: #ffffff;">sm.fabio.roberticosta@gmail.com</span></div>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: #94a3b8;
+              line-height: 1.5;
+              margin: 0;
+              max-width: 380px;
+            "
+          >
+            Engenharia de Inteligência Operacional. Entregamos automação com n8n e WhatsApp Business Cloud API Oficial para agilizar processos B2B e cuidar do seu colaborador.
+          </p>
+          <div
+            style="
+              font-size: 0.78rem;
+              color: #64748b;
+              font-weight: 600;
+              margin-top: 4px;
+            "
+          >
+            <div>FLUXUS TECNOLOGIA DA INFORMAÇÃO</div>
+            <div>CNPJ: 18.647.981/0001-29 - Caraguatatuba - SP</div>
           </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 14px; background: #0f172a; padding: 12px 16px; border-radius: 10px; border: 1px solid #334155; width: fit-content;">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887" alt="QR Code WhatsApp" style="width: 75px; height: 75px; border-radius: 6px; background: #ffffff; padding: 3px;">
-          <div style="display: flex; flex-direction: column; gap: 3px; text-align: left;">
-            <span style="font-size: 0.9rem; font-weight: bold; color: #ffffff;">Escaneie o QR Code</span>
-            <span style="font-size: 0.78rem; color: #94a3b8;">Fale direto no WhatsApp</span>
+        <!-- COLUNA 2: QR CODE CENTRALIZADO -->
+        <div
+          style="
+            flex: 1;
+            min-width: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              background: #0f172a;
+              padding: 12px 16px;
+              border-radius: 10px;
+              border: 1px solid #334155;
+              width: fit-content;
+            "
+          >
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887"
+              alt="QR Code WhatsApp"
+              style="
+                width: 75px;
+                height: 75px;
+                border-radius: 6px;
+                background: #ffffff;
+                padding: 3px;
+              "
+            />
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                text-align: left;
+              "
+            >
+              <span style="font-size: 0.9rem; font-weight: bold; color: #ffffff"
+                >Escaneie o QR Code</span
+              >
+              <span style="font-size: 0.78rem; color: #94a3b8"
+                >Fale direto no WhatsApp</span
+              >
+            </div>
+          </div>
+          <button
+            onclick="openModal('modal-privacidade')"
+            style="
+              font-size: 0.75rem;
+              color: #38bdf8;
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              text-decoration: underline;
+              margin-top: 4px;
+            "
+          >
+            Política de Privacidade & Isenção Meta (Disclaimer)
+          </button>
+        </div>
+
+        <!-- COLUNA 3: CONTATOS MOVIDOS PARA A DIREITA -->
+        <div
+          style="
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-align: right;
+            align-items: flex-end;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              font-size: 0.9rem;
+              color: #e2e8f0;
+              font-weight: 600;
+            "
+          >
+            <div>
+              TELEFONE / WHATSAPP:
+              <span style="color: #00e676">+55 12 3600-6887</span>
+            </div>
+            <div>
+              E-MAIL:
+              <span style="color: #ffffff"
+                >sm.fabio.roberticosta@gmail.com</span
+              >
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- COLUNA 3: LIDERANÇA TÉCNICA -->
-      <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 6px; text-align: right; align-items: flex-end;">
-        <h4 style="font-size: 0.85rem; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin: 0; height: 24px; display: flex; align-items: center; justify-content: flex-end;">
-          Liderança Técnica
-        </h4>
-        <div style="display: flex; flex-direction: column; gap: 2px;">
-          <div style="font-size: 1.25rem; font-weight: 900; color: #ffffff;">Fabio Roberti Costa</div>
-          <div style="font-size: 0.8rem; font-weight: 900; color: #ff9100; letter-spacing: 0.5px;">DIRETOR DE TECNOLOGIA - CTO</div>
-          <div style="font-size: 0.75rem; font-weight: 700; color: #64748b; margin-top: 2px;">ARQUITETO DE SOLUÇÕES ÁGEIS E SCRUM MASTER</div>
-        </div>
+      <div
+        class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16"
+        style="
+          margin-top: 32px;
+          padding-top: 20px;
+          border-top: 1px solid #1e293b;
+          text-align: center;
+          font-size: 0.82rem;
+          font-weight: 600;
+          color: #64748b;
+        "
+      >
+        © 2026 Fluxus. Todos os direitos reservados. Engenharia de Inteligência Operacional & Soluções Ágeis.
       </div>
+    </footer>
 
-    </div>
+    <script>
+      const menuBtn = document.getElementById("hamburger-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
-    <!-- COPYRIGHT INFERIOR -->
-    <div class="w-full max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16" style="margin-top: 32px; padding-top: 20px; border-top: 1px solid #1e293b; text-align: center; font-size: 0.82rem; font-weight: 600; color: #64748b;">
-      © 2026 Fluxus Agile. Todos os direitos reservados. Uma divisão de soluções ágeis.
-    </div>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById('hamburger-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-
-    function openModal(id) {
-      document.getElementById(id).classList.remove('hidden');
-    }
-    function closeModal(id) {
-      document.getElementById(id).classList.add('hidden');
-    }
-  </script>
-</body>
+      function openModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove("hidden");
+      }
+      function closeModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.add("hidden");
+      }
+    </script>
+  </body>
 </html>
