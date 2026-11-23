@@ -15,7 +15,9 @@
     />
     <link rel="icon" href="./src/images/favicon-fluxus.jpg" type="image/jpeg" />
 
-    <title>Fluxus | Engenharia de Inteligência Operacional & Agentes de IA</title>
+    <title>
+      Fluxus | Engenharia de Inteligência Operacional & Agentes de IA
+    </title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,12 +55,17 @@
 
       /* Glow Infinito para as Badges Superiores */
       @keyframes pulseGlowBadge {
-        0%, 100% {
-          box-shadow: 0 0 12px rgba(245, 158, 11, 0.4), inset 0 0 8px rgba(245, 158, 11, 0.2);
+        0%,
+        100% {
+          box-shadow:
+            0 0 12px rgba(245, 158, 11, 0.4),
+            inset 0 0 8px rgba(245, 158, 11, 0.2);
           border-color: rgba(245, 158, 11, 0.6);
         }
         50% {
-          box-shadow: 0 0 25px rgba(245, 158, 11, 0.85), inset 0 0 15px rgba(245, 158, 11, 0.4);
+          box-shadow:
+            0 0 25px rgba(245, 158, 11, 0.85),
+            inset 0 0 15px rgba(245, 158, 11, 0.4);
           border-color: rgba(245, 158, 11, 1);
         }
       }
@@ -69,44 +76,78 @@
 
       /* Glow Infinito para Botoes */
       @keyframes pulseGlow {
-        0%, 100% {
-          box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 15px rgba(59, 130, 246, 0.2);
+        0%,
+        100% {
+          box-shadow:
+            0 0 15px rgba(59, 130, 246, 0.4),
+            inset 0 0 15px rgba(59, 130, 246, 0.2);
         }
         50% {
-          box-shadow: 0 0 35px rgba(59, 130, 246, 0.8), inset 0 0 25px rgba(59, 130, 246, 0.4);
+          box-shadow:
+            0 0 35px rgba(59, 130, 246, 0.8),
+            inset 0 0 25px rgba(59, 130, 246, 0.4);
         }
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
       }
 
       /* Keyframes para Degradês Móveis Direcionais */
       @keyframes shimmerCenterOut {
-        0% { background-position: 50% 0%; }
-        50% { background-position: 100% 0%; }
-        100% { background-position: 50% 0%; }
+        0% {
+          background-position: 50% 0%;
+        }
+        50% {
+          background-position: 100% 0%;
+        }
+        100% {
+          background-position: 50% 0%;
+        }
       }
 
       @keyframes shimmerLeftRight {
-        0% { background-position: -200% 0; }
-        100% { background-position: 200% 0; }
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
       }
 
       @keyframes shimmerRightLeft {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
       }
 
       @keyframes shimmerTopDown {
-        0% { background-position: 0% -200%; }
-        100% { background-position: 0% 200%; }
+        0% {
+          background-position: 0% -200%;
+        }
+        100% {
+          background-position: 0% 200%;
+        }
       }
 
       /* Classes de Degradê Dinâmico */
       .glow-center-out {
-        background: radial-gradient(circle, #60a5fa 0%, #3b82f6 45%, #f59e0b 85%, #60a5fa 100%);
+        background: radial-gradient(
+          circle,
+          #60a5fa 0%,
+          #3b82f6 45%,
+          #f59e0b 85%,
+          #60a5fa 100%
+        );
         background-size: 200% 200%;
         color: transparent;
         -webkit-background-clip: text;
@@ -115,7 +156,13 @@
       }
 
       .glow-left-right {
-        background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 30%, #f59e0b 60%, #3b82f6 100%);
+        background: linear-gradient(
+          90deg,
+          #3b82f6 0%,
+          #60a5fa 30%,
+          #f59e0b 60%,
+          #3b82f6 100%
+        );
         background-size: 200% auto;
         color: transparent;
         -webkit-background-clip: text;
@@ -124,7 +171,13 @@
       }
 
       .glow-right-left {
-        background: linear-gradient(270deg, #3b82f6 0%, #f59e0b 40%, #60a5fa 80%, #3b82f6 100%);
+        background: linear-gradient(
+          270deg,
+          #3b82f6 0%,
+          #f59e0b 40%,
+          #60a5fa 80%,
+          #3b82f6 100%
+        );
         background-size: 200% auto;
         color: transparent;
         -webkit-background-clip: text;
@@ -133,7 +186,12 @@
       }
 
       .glow-top-down {
-        background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #f59e0b 100%);
+        background: linear-gradient(
+          180deg,
+          #60a5fa 0%,
+          #3b82f6 50%,
+          #f59e0b 100%
+        );
         background-size: auto 200%;
         color: transparent;
         -webkit-background-clip: text;
@@ -208,7 +266,7 @@
               onerror="
                 this.onerror = null;
                 this.src =
-                  'https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887';
+                  'https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/5512982827603';
               "
             />
           </div>
@@ -300,11 +358,17 @@
         >
           <!-- BADGES TECNOLÓGICAS NO HERO -->
           <div class="flex flex-wrap items-center justify-center gap-3">
-            <span class="bg-emerald-500/10 text-emerald-400 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-emerald-500/40 tracking-wider inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span
+              class="bg-emerald-500/10 text-emerald-400 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-emerald-500/40 tracking-wider inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
               WhatsApp Business Cloud API Oficial
             </span>
-            <span class="bg-blue-500/10 text-blue-400 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-blue-500/40 tracking-wider inline-flex items-center gap-1.5">
+            <span
+              class="bg-blue-500/10 text-blue-400 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-blue-500/40 tracking-wider inline-flex items-center gap-1.5"
+            >
               ⚡ Motor n8n & LLM Agents
             </span>
           </div>
@@ -317,7 +381,8 @@
           <h1
             class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl leading-relaxed text-white uppercase tracking-widest glow-center-out max-w-6xl mx-auto px-2"
           >
-            O seu cliente não vai esperar. <br>A IA responde em 2 segundos <br>com 100% de estabilidade.
+            O seu cliente não vai esperar. <br />A IA responde em 2 segundos
+            <br />com 100% de estabilidade.
           </h1>
         </div>
 
@@ -333,21 +398,30 @@
                 Cuidar do seu cliente interno!<br />
                 O seu colaborador!
               </h2>
-              <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-medium">
+              <p
+                class="text-slate-200 text-base sm:text-lg leading-relaxed font-medium"
+              >
                 Elimine de vez as falhas e a perda de oportunidades comerciais.
-               Acabe com a espera. Coloque a <strong>inteligência artificial</strong> para responder em segundos no <strong>Site Oficial do  WhatsApp</strong>, organizando todos os contatos automaticamente no seu sistema e planilhas.
+                Acabe com a espera. Coloque a
+                <strong>inteligência artificial</strong> para responder em
+                segundos no <strong>Site Oficial do WhatsApp</strong>,
+                organizando todos os contatos automaticamente no seu sistema e
+                planilhas.
               </p>
-              <p class="text-slate-400 text-sm sm:text-base leading-relaxed border-l-4 border-agileBlue pl-4">
-                Nossa Engenharia Operacional apoia a sua equipe interna: facilitamos a
-                captação de currículos, triagem de candidatos, capacitação e criamos a sua
-                Landing Page de Onboarding personalizada diretamente no
-                WhatsApp, com <strong>zero risco de banimento de chip</strong>.
+              <p
+                class="text-slate-400 text-sm sm:text-base leading-relaxed border-l-4 border-agileBlue pl-4"
+              >
+                Nossa Engenharia Operacional apoia a sua equipe interna:
+                facilitamos a captação de currículos, triagem de candidatos,
+                capacitação e criamos a sua Landing Page de Onboarding
+                personalizada diretamente no WhatsApp, com
+                <strong>zero risco de banimento de chip</strong>.
               </p>
             </div>
 
             <div class="flex flex-wrap gap-4 pt-2">
               <a
-                href="https://wa.me/551236006887?text=Olá!%20Gostaria%20de%20agendar%20uma%20consultoria%20com%20o%20CTO%20da%20Fluxus."
+                href="https://wa.me/5512982827603?text=Olá!%20Gostaria%20de%20agendar%20uma%20consultoria%20com%20o%20CTO%20da%20Fluxus."
                 target="_blank"
                 rel="noopener"
                 class="btn-agile-glow hover:scale-[1.03] duration-300 px-8 py-4 text-white font-black text-sm uppercase tracking-wider rounded-full shadow-2xl text-center w-full sm:w-auto"
@@ -355,7 +429,7 @@
                 Agendar Consultoria CTO ⚡
               </a>
               <a
-                href="https://wa.me/551236006887?text=Olá!%20Quero%20testar%20a%20demonstração%20do%20Agente%20Oficial%20Fluxus%20no%20WhatsApp."
+                href="https://wa.me/5512982827603?text=Olá!%20Quero%20testar%20a%20demonstração%20do%20Agente%20Oficial%20Fluxus%20no%20WhatsApp."
                 target="_blank"
                 rel="noopener"
                 class="px-8 py-4 bg-slate-900 text-white font-black text-sm uppercase tracking-wider rounded-full border-2 border-slate-700 hover:border-agileBlue hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition text-center w-full sm:w-auto"
@@ -381,7 +455,9 @@
                   <h4 class="font-black text-white text-base">
                     Agente Oficial Fluxus (n8n + Meta API)
                   </h4>
-                  <p class="text-xs text-emerald-400 font-bold flex items-center gap-1">
+                  <p
+                    class="text-xs text-emerald-400 font-bold flex items-center gap-1"
+                  >
                     <span>●</span> WhatsApp Business Cloud API Ativa
                   </p>
                 </div>
@@ -400,14 +476,16 @@
                   💬 Colaborador / Candidato:
                 </p>
                 <p>
-                  Quero enviar meu currículo para as vagas abertas ou tirar dúvida sobre minha escala!
+                  Quero enviar meu currículo para as vagas abertas ou tirar
+                  dúvida sobre minha escala!
                 </p>
               </div>
               <div
                 class="bg-agileBlue/20 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%] ml-auto border border-agileBlue/40"
               >
                 <p>
-                  ⚡ Resposta em 2s: Dados triados pelo motor n8n, registrados no CRM/Planilha e link de suporte enviado no WhatsApp!
+                  ⚡ Resposta em 2s: Dados triados pelo motor n8n, registrados
+                  no CRM/Planilha e link de suporte enviado no WhatsApp!
                 </p>
               </div>
               <div
@@ -417,14 +495,16 @@
                   📄 Novo Colaborador (Onboarding):
                 </p>
                 <p>
-                  Onde encontro o manual da empresa e as diretrizes da minha função?
+                  Onde encontro o manual da empresa e as diretrizes da minha
+                  função?
                 </p>
               </div>
               <div
                 class="bg-agileBlue/20 text-white p-3 rounded-2xl rounded-tr-none max-w-[80%] ml-auto border border-agileBlue/40"
               >
                 <p>
-                  ⚡ Resposta em 2s: Seja bem-vindo! Acesse sua Landing Page exclusiva de Onboarding aqui: [Link]
+                  ⚡ Resposta em 2s: Seja bem-vindo! Acesse sua Landing Page
+                  exclusiva de Onboarding aqui: [Link]
                 </p>
               </div>
             </div>
@@ -433,16 +513,28 @@
               class="grid grid-cols-3 text-center border-t border-slate-800 pt-3"
             >
               <div>
-                <strong class="block text-xl font-black text-agileBlue">2s</strong>
-                <span class="text-[9px] font-black text-slate-400 uppercase">Tempo de Resposta</span>
+                <strong class="block text-xl font-black text-agileBlue"
+                  >2s</strong
+                >
+                <span class="text-[9px] font-black text-slate-400 uppercase"
+                  >Tempo de Resposta</span
+                >
               </div>
               <div>
-                <strong class="block text-xl font-black text-emerald-400">0%</strong>
-                <span class="text-[9px] font-black text-slate-400 uppercase">Risco de Banimento</span>
+                <strong class="block text-xl font-black text-emerald-400"
+                  >0%</strong
+                >
+                <span class="text-[9px] font-black text-slate-400 uppercase"
+                  >Risco de Banimento</span
+                >
               </div>
               <div>
-                <strong class="block text-xl font-black text-agileBlue">100%</strong>
-                <span class="text-[9px] font-black text-slate-400 uppercase">Apoio ao RH & CRM</span>
+                <strong class="block text-xl font-black text-agileBlue"
+                  >100%</strong
+                >
+                <span class="text-[9px] font-black text-slate-400 uppercase"
+                  >Apoio ao RH & CRM</span
+                >
               </div>
             </div>
           </aside>
@@ -466,65 +558,105 @@
             >
               Por que a Engenharia da Fluxus Não Corre Risco de Banimento?
             </h2>
-            <p class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
-              Enquanto ferramentas amadoras usam conexões de QR Code piratas que fazem as empresas perderem seus chips do dia para a noite, a Fluxus opera na nuvem oficial da Meta.
+            <p
+              class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed"
+            >
+              Enquanto ferramentas amadoras usam conexões de QR Code piratas que
+              fazem as empresas perderem seus chips do dia para a noite, a
+              Fluxus opera na nuvem oficial da Meta.
             </p>
           </div>
 
           <!-- TABELA COMPARATIVA -->
           <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <!-- COLUNA PIRATA / AMADORA -->
-            <div class="bg-red-950/20 border-2 border-red-500/40 p-8 rounded-3xl space-y-4 text-left relative overflow-hidden">
-              <div class="absolute top-0 right-0 bg-red-600 text-white font-black text-[10px] uppercase px-4 py-1 rounded-bl-xl">
+            <div
+              class="bg-red-950/20 border-2 border-red-500/40 p-8 rounded-3xl space-y-4 text-left relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 bg-red-600 text-white font-black text-[10px] uppercase px-4 py-1 rounded-bl-xl"
+              >
                 Risco Alto
               </div>
-              <h3 class="font-black text-xl text-red-400 uppercase flex items-center gap-2">
+              <h3
+                class="font-black text-xl text-red-400 uppercase flex items-center gap-2"
+              >
                 <span>⚠️</span> Sistemas Amadores (QR Code)
               </h3>
               <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
                 <li class="flex items-start gap-2">
                   <span class="text-red-500 font-bold">✕</span>
-                  <span>Conexão via QR Code simulando WhatsApp Web (detectada pela IA da Meta).</span>
+                  <span
+                    >Conexão via QR Code simulando WhatsApp Web (detectada pela
+                    IA da Meta).</span
+                  >
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-red-500 font-bold">✕</span>
-                  <span>Risco iminente de banimento definitivo do chip e perda de todo o histórico.</span>
+                  <span
+                    >Risco iminente de banimento definitivo do chip e perda de
+                    todo o histórico.</span
+                  >
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-red-500 font-bold">✕</span>
-                  <span>Depende de celular ligado, bateria carregada e Wi-Fi estável.</span>
+                  <span
+                    >Depende de celular ligado, bateria carregada e Wi-Fi
+                    estável.</span
+                  >
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-red-500 font-bold">✕</span>
-                  <span>Sem garantia de entrega e vulnerável a quedas frequentes do servidor.</span>
+                  <span
+                    >Sem garantia de entrega e vulnerável a quedas frequentes do
+                    servidor.</span
+                  >
                 </li>
               </ul>
             </div>
 
             <!-- COLUNA FLUXUS OFICIAL -->
-            <div class="bg-emerald-950/20 border-2 border-emerald-500 p-8 rounded-3xl space-y-4 text-left relative overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-              <div class="absolute top-0 right-0 bg-emerald-500 text-slate-950 font-black text-[10px] uppercase px-4 py-1 rounded-bl-xl">
+            <div
+              class="bg-emerald-950/20 border-2 border-emerald-500 p-8 rounded-3xl space-y-4 text-left relative overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.15)]"
+            >
+              <div
+                class="absolute top-0 right-0 bg-emerald-500 text-slate-950 font-black text-[10px] uppercase px-4 py-1 rounded-bl-xl"
+              >
                 100% Protegido
               </div>
-              <h3 class="font-black text-xl text-emerald-400 uppercase flex items-center gap-2">
+              <h3
+                class="font-black text-xl text-emerald-400 uppercase flex items-center gap-2"
+              >
                 <span>✅</span> Engenharia Fluxus (Cloud API)
               </h3>
               <ul class="space-y-3 text-xs sm:text-sm text-slate-100">
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span>Conexão direta na WhatsApp Business Cloud API Oficial da Meta.</span>
+                  <span
+                    >Conexão direta na WhatsApp Business Cloud API Oficial da
+                    Meta.</span
+                  >
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span><strong>Zero risco de banimento por tecnologia</strong>. Seu número homologado na nuvem.</span>
+                  <span
+                    ><strong>Zero risco de banimento por tecnologia</strong>.
+                    Seu número homologado na nuvem.</span
+                  >
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span>Funciona 24/7 em servidores de nuvem de alta disponibilidade sem precisar de celular.</span>
+                  <span
+                    >Funciona 24/7 em servidores de nuvem de alta
+                    disponibilidade sem precisar de celular.</span
+                  >
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span>Conexão nativa via n8n com seu CRM, planilhas Excel e Agentes de IA (OpenAI/Claude).</span>
+                  <span
+                    >Conexão nativa via n8n com seu CRM, planilhas Excel e
+                    Agentes de IA (OpenAI/Claude).</span
+                  >
                 </li>
               </ul>
             </div>
@@ -554,7 +686,9 @@
             <p
               class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed"
             >
-              Sem parar sua rotina, entendemos como sua empresa funciona e criamos seu atendimento automático no WhatsApp de forma simples e rápida.
+              Sem parar sua rotina, entendemos como sua empresa funciona e
+              criamos seu atendimento automático no WhatsApp de forma simples e
+              rápida.
             </p>
           </div>
 
@@ -574,9 +708,13 @@
                 Zero Reuniões Longas
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Tabelas de preços, fluxos de atendimento, regras de conduta e cardápios/serviços enviados por simples mensagens de texto e áudio no WhatsApp.
+                Tabelas de preços, fluxos de atendimento, regras de conduta e
+                cardápios/serviços enviados por simples mensagens de texto e
+                áudio no WhatsApp.
               </p>
-              <div class="pt-2 flex items-center justify-between text-xs text-indigo-400 font-bold uppercase">
+              <div
+                class="pt-2 flex items-center justify-between text-xs text-indigo-400 font-bold uppercase"
+              >
                 <span>Saiba Mais ➔</span>
                 <span class="bg-indigo-500/20 px-2 py-1 rounded">Clique</span>
               </div>
@@ -597,10 +735,14 @@
                 Sem Sobrecarregar o Proprietário
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                O dono do negócio não perde tempo. Alinhamos a parametrização do n8n e as regras da automação diretamente com o seu
-                <strong class="text-white">gerente ou líder operacional</strong>.
+                O dono do negócio não perde tempo. Alinhamos a parametrização do
+                n8n e as regras da automação diretamente com o seu
+                <strong class="text-white">gerente ou líder operacional</strong
+                >.
               </p>
-              <div class="pt-2 flex items-center justify-between text-xs text-amber-400 font-bold uppercase">
+              <div
+                class="pt-2 flex items-center justify-between text-xs text-amber-400 font-bold uppercase"
+              >
                 <span>Saiba Mais ➔</span>
                 <span class="bg-amber-500/20 px-2 py-1 rounded">Clique</span>
               </div>
@@ -621,9 +763,13 @@
                 Treinamento no próprio WhatsApp
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Sua equipe aprende a utilizar os robôs, acessar o CRM e consultar informações com vídeos explicativos diretos de 2 minutos no próprio WhatsApp.
+                Sua equipe aprende a utilizar os robôs, acessar o CRM e
+                consultar informações com vídeos explicativos diretos de 2
+                minutos no próprio WhatsApp.
               </p>
-              <div class="pt-2 flex items-center justify-between text-xs text-emerald-400 font-bold uppercase">
+              <div
+                class="pt-2 flex items-center justify-between text-xs text-emerald-400 font-bold uppercase"
+              >
                 <span>Saiba Mais ➔</span>
                 <span class="bg-emerald-500/20 px-2 py-1 rounded">Clique</span>
               </div>
@@ -649,8 +795,13 @@
             >
               Ajudamos sua empresa a cuidar do seu cliente interno!
             </h2>
-            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-              Nós não substituímos o seu RH e não contratamos ninguém no seu lugar. <br>Nós entregamos a melhor engenharia automatizada para que a sua equipe trabalhe <br>com leveza e retenha os melhores talentos.
+            <p
+              class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
+            >
+              Nós não substituímos o seu RH e não contratamos ninguém no seu
+              lugar. <br />Nós entregamos a melhor engenharia automatizada para
+              que a sua equipe trabalhe <br />com leveza e retenha os melhores
+              talentos.
             </p>
           </div>
 
@@ -672,7 +823,9 @@
                   Atendimento Repetitivo
                 </h3>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Respostas automáticas no WhatsApp para dúvidas recorrentes de escala, atestados, holerites e normas internas, além de integração direta com seu CRM.
+                  Respostas automáticas no WhatsApp para dúvidas recorrentes de
+                  escala, atestados, holerites e normas internas, além de
+                  integração direta com seu CRM.
                 </p>
               </div>
               <div
@@ -703,7 +856,9 @@
                   Valorização Humana
                 </h3>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Mais tempo livre para a liderança dar atenção presencial ao colaborador e entender suas necessidades enquanto a IA cuida da burocracia.
+                  Mais tempo livre para a liderança dar atenção presencial ao
+                  colaborador e entender suas necessidades enquanto a IA cuida
+                  da burocracia.
                 </p>
               </div>
               <div
@@ -734,7 +889,9 @@
                   Banco de Talentos 24/7
                 </h3>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Recebimento e triagem contínua de currículos no WhatsApp via n8n para você selecionar rapidamente os melhores candidatos no seu painel CRM.
+                  Recebimento e triagem contínua de currículos no WhatsApp via
+                  n8n para você selecionar rapidamente os melhores candidatos no
+                  seu painel CRM.
                 </p>
               </div>
               <div
@@ -763,11 +920,16 @@
             <h2
               class="font-serif font-black text-xl sm:text-2xl lg:text-3xl uppercase tracking-wide text-white glow-left-right leading-tight"
             >
-              NÓS NÃO CONTRATAMOS NINGUÉM.
-              AJUDAMOS A SUA EMPRESA CONTRATAR PESSOAL, COM TECNOLOGIA!
+              NÓS NÃO CONTRATAMOS NINGUÉM. AJUDAMOS A SUA EMPRESA CONTRATAR
+              PESSOAL, COM TECNOLOGIA!
             </h2>
-            <p class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
-              A decisão final é sempre sua. Entregamos o motor de triagem no n8n e criamos a sua <strong>Landing Page de Onboarding personalizada</strong> para engajar os novos colaboradores desde o primeiro dia.
+            <p
+              class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed"
+            >
+              A decisão final é sempre sua. Entregamos o motor de triagem no n8n
+              e criamos a sua
+              <strong>Landing Page de Onboarding personalizada</strong> para
+              engajar os novos colaboradores desde o primeiro dia.
             </p>
           </div>
 
@@ -781,9 +943,12 @@
                 Captação na Palma da Mão
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Coleta e organização automática de dados de candidatos via Meta Cloud API diretamente no seu CRM.
+                Coleta e organização automática de dados de candidatos via Meta
+                Cloud API diretamente no seu CRM.
               </p>
-              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">
+                Clique para ver o impacto ➔
+              </div>
             </div>
             <div
               onclick="openModal('modal-step-2')"
@@ -794,9 +959,12 @@
                 Triagem com IA & n8n
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Perguntas qualificatórias automatizadas para seu RH escolher de forma rápida os melhores perfis.
+                Perguntas qualificatórias automatizadas para seu RH escolher de
+                forma rápida os melhores perfis.
               </p>
-              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">
+                Clique para ver o impacto ➔
+              </div>
             </div>
             <div
               onclick="openModal('modal-step-3')"
@@ -807,9 +975,12 @@
                 Landing Page Onboard
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Desenvolvimento em Vibe Coding da sua página exclusiva com cultura, Missão e boas-vindas.
+                Desenvolvimento em Vibe Coding da sua página exclusiva com
+                cultura, Missão e boas-vindas.
               </p>
-              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">
+                Clique para ver o impacto ➔
+              </div>
             </div>
             <div
               onclick="openModal('modal-step-4')"
@@ -820,9 +991,12 @@
                 Módulos de Capacitação
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Envio de materiais e orientações de trabalho no celular do colaborador sem depender de papel.
+                Envio de materiais e orientações de trabalho no celular do
+                colaborador sem depender de papel.
               </p>
-              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">Clique para ver o impacto ➔</div>
+              <div class="pt-2 text-xs text-agileBlue font-bold uppercase">
+                Clique para ver o impacto ➔
+              </div>
             </div>
           </div>
         </div>
@@ -845,8 +1019,11 @@
             >
               EXPLORE NOSSO ECOSSISTEMA DE VERTICAIS
             </h2>
-            <p class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
-              Clique no modelo do seu nicho para abrir o modal com os entregáveis detalhados ou <br />acesse a Landing Page dedicada.
+            <p
+              class="text-slate-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed"
+            >
+              Clique no modelo do seu nicho para abrir o modal com os
+              entregáveis detalhados ou <br />acesse a Landing Page dedicada.
             </p>
           </div>
 
@@ -874,7 +1051,8 @@
                   </p>
                 </div>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Suporte de atendimento ao colaborador e ferramentas de tecnologia para recrutamento e onboarding no WhatsApp.
+                  Suporte de atendimento ao colaborador e ferramentas de
+                  tecnologia para recrutamento e onboarding no WhatsApp.
                 </p>
               </div>
 
@@ -918,7 +1096,8 @@
                   Hotelaria
                 </p>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Padronização de regras de atendimento para recepção, governança e restaurante, além do suporte direto no WhatsApp.
+                  Padronização de regras de atendimento para recepção,
+                  governança e restaurante, além do suporte direto no WhatsApp.
                 </p>
               </div>
               <div class="space-y-2 pt-2">
@@ -950,7 +1129,8 @@
                   Gastronomia
                 </p>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Tecnologia para ajudar na contratação do pessoal de salão e cozinha, padronização de procedimentos e onboarding.
+                  Tecnologia para ajudar na contratação do pessoal de salão e
+                  cozinha, padronização de procedimentos e onboarding.
                 </p>
               </div>
               <div class="space-y-2 pt-2">
@@ -982,7 +1162,8 @@
                   Clínicas & Consultórios
                 </p>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Apoio para recepcionistas e secretárias, protocolos de conduta e automação de agendamentos no WhatsApp Oficial.
+                  Apoio para recepcionistas e secretárias, protocolos de conduta
+                  e automação de agendamentos no WhatsApp Oficial.
                 </p>
               </div>
               <div class="space-y-2 pt-2">
@@ -1020,11 +1201,17 @@
               <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
                 Sob a liderança de
                 <strong
-                  >Fabio Roberti Costa - CTO, Lead Vibe Coder, Scrum Master e Arquiteto de Soluções</strong
-                >, a Fluxus combina mais de 30 anos de experiência real em gestão e liderança de equipe em A&B, Hotelaria e Varejo com a velocidade do Vibe Coding e a orquestração de backend via n8n.
+                  >Fabio Roberti Costa - CTO, Lead Vibe Coder, Scrum Master e
+                  Arquiteto de Soluções</strong
+                >, a Fluxus combina mais de 30 anos de experiência real em
+                gestão e liderança de equipe em A&B, Hotelaria e Varejo com a
+                velocidade do Vibe Coding e a orquestração de backend via n8n.
               </p>
               <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Entregamos engenharia prática na WhatsApp Cloud API Oficial da Meta e CRMs, permitando que a sua empresa cuide com excelência do seu cliente interno e escale operações com total estabilidade.
+                Entregamos engenharia prática na WhatsApp Cloud API Oficial da
+                Meta e CRMs, permitando que a sua empresa cuide com excelência
+                do seu cliente interno e escale operações com total
+                estabilidade.
               </p>
             </div>
 
@@ -1071,81 +1258,186 @@
     <!-- MODAIS INTERATIVOS DE CONVENCIMENTO E DETALHAMENTO -->
 
     <!-- MODAIS IMPLANTAÇÃO -->
-    <div id="modal-impl-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-indigo-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-indigo-400 uppercase">Zero Reuniões Longas</h3>
+    <div
+      id="modal-impl-1"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-indigo-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-indigo-400 uppercase">
+          Zero Reuniões Longas
+        </h3>
         <p class="text-xs text-slate-300 leading-relaxed">
-          Nossa metodologia elimina totalmente a perda de tempo da sua diretoria. Coletamos fotos, tabelas de preço, cardápios e procedimentos internos por áudios de 30 segundos no WhatsApp.
+          Nossa metodologia elimina totalmente a perda de tempo da sua
+          diretoria. Coletamos fotos, tabelas de preço, cardápios e
+          procedimentos internos por áudios de 30 segundos no WhatsApp.
         </p>
         <ul class="text-xs text-slate-300 space-y-1 list-disc pl-4">
           <li>Configuração completa em até 48 horas no n8n.</li>
           <li>Inclusão de regras personalizadas do seu negócio.</li>
           <li>Aprovação rápida e direta no celular.</li>
         </ul>
-        <button onclick="closeModal('modal-impl-1')" class="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl text-xs uppercase">Entendi ⚡</button>
+        <button
+          onclick="closeModal('modal-impl-1')"
+          class="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl text-xs uppercase"
+        >
+          Entendi ⚡
+        </button>
       </div>
     </div>
 
-    <div id="modal-impl-2" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-amber-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-amber-400 uppercase">Sem Sobrecarregar o Proprietário</h3>
+    <div
+      id="modal-impl-2"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-amber-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-amber-400 uppercase">
+          Sem Sobrecarregar o Proprietário
+        </h3>
         <p class="text-xs text-slate-300 leading-relaxed">
-          O dono do negócio precisa focar em estratégia e crescimento. Nós lidamos diretamente com os seus líderes operacionais e gerentes para alinhar cada detalhe.
+          O dono do negócio precisa focar em estratégia e crescimento. Nós
+          lidamos diretamente com os seus líderes operacionais e gerentes para
+          alinhar cada detalhe.
         </p>
         <ul class="text-xs text-slate-300 space-y-1 list-disc pl-4">
           <li>Alinhamento técnico direto com os gerentes.</li>
           <li>Sem necessidade de conhecimentos em programação.</li>
           <li>Relatórios resumidos enviados diretamente ao proprietário.</li>
         </ul>
-        <button onclick="closeModal('modal-impl-2')" class="w-full py-3 bg-amber-500 text-slate-950 font-bold rounded-xl text-xs uppercase">Entendi ⚡</button>
+        <button
+          onclick="closeModal('modal-impl-2')"
+          class="w-full py-3 bg-amber-500 text-slate-950 font-bold rounded-xl text-xs uppercase"
+        >
+          Entendi ⚡
+        </button>
       </div>
     </div>
 
-    <div id="modal-impl-3" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-emerald-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-emerald-400 uppercase">Treinamento no próprio WhatsApp</h3>
+    <div
+      id="modal-impl-3"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-emerald-500 rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-emerald-400 uppercase">
+          Treinamento no próprio WhatsApp
+        </h3>
         <p class="text-xs text-slate-300 leading-relaxed">
-          Toda a capacitação da sua equipe ocorre dentro do aplicativo que eles já utilizam todos os dias. Sem necessidade de instalar novas ferramentas.
+          Toda a capacitação da sua equipe ocorre dentro do aplicativo que eles
+          já utilizam todos os dias. Sem necessidade de instalar novas
+          ferramentas.
         </p>
         <ul class="text-xs text-slate-300 space-y-1 list-disc pl-4">
           <li>Vídeos curtos e objetivos de 2 minutos.</li>
           <li>Checklists e manuais interativos no próprio celular.</li>
           <li>Engajamento imediato dos novos e antigos colaboradores.</li>
         </ul>
-        <button onclick="closeModal('modal-impl-3')" class="w-full py-3 bg-emerald-500 text-slate-950 font-bold rounded-xl text-xs uppercase">Entendi ⚡</button>
+        <button
+          onclick="closeModal('modal-impl-3')"
+          class="w-full py-3 bg-emerald-500 text-slate-950 font-bold rounded-xl text-xs uppercase"
+        >
+          Entendi ⚡
+        </button>
       </div>
     </div>
 
     <!-- MODAIS ESTEIRA RH -->
-    <div id="modal-step-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">01. Captação na Palma da Mão</h3>
-        <p class="text-xs text-slate-300">Receba currículos 24 horas por dia diretamente no WhatsApp Oficial. Elimine papéis perdidos, e-mails esquecidos e contatos soltos, com integração direta no seu CRM.</p>
-        <button onclick="closeModal('modal-step-1')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+    <div
+      id="modal-step-1"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">
+          01. Captação na Palma da Mão
+        </h3>
+        <p class="text-xs text-slate-300">
+          Receba currículos 24 horas por dia diretamente no WhatsApp Oficial.
+          Elimine papéis perdidos, e-mails esquecidos e contatos soltos, com
+          integração direta no seu CRM.
+        </p>
+        <button
+          onclick="closeModal('modal-step-1')"
+          class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase"
+        >
+          Fechar ⚡
+        </button>
       </div>
     </div>
 
-    <div id="modal-step-2" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">02. Triagem com IA & n8n</h3>
-        <p class="text-xs text-slate-300">O Agente de IA no n8n faz as perguntas certas antes de repassar os contatos ao RH: disponibilidade de horários, experiência prévia e localização.</p>
-        <button onclick="closeModal('modal-step-2')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+    <div
+      id="modal-step-2"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">
+          02. Triagem com IA & n8n
+        </h3>
+        <p class="text-xs text-slate-300">
+          O Agente de IA no n8n faz as perguntas certas antes de repassar os
+          contatos ao RH: disponibilidade de horários, experiência prévia e
+          localização.
+        </p>
+        <button
+          onclick="closeModal('modal-step-2')"
+          class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase"
+        >
+          Fechar ⚡
+        </button>
       </div>
     </div>
 
-    <div id="modal-step-3" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">03. Landing Page Onboard</h3>
-        <p class="text-xs text-slate-300">Desenvolvemos uma página visualmente incrível com a história, cultura e diretrizes da sua empresa para encantar o novo funcionário desde o dia 1.</p>
-        <button onclick="closeModal('modal-step-3')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+    <div
+      id="modal-step-3"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">
+          03. Landing Page Onboard
+        </h3>
+        <p class="text-xs text-slate-300">
+          Desenvolvemos uma página visualmente incrível com a história, cultura
+          e diretrizes da sua empresa para encantar o novo funcionário desde o
+          dia 1.
+        </p>
+        <button
+          onclick="closeModal('modal-step-3')"
+          class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase"
+        >
+          Fechar ⚡
+        </button>
       </div>
     </div>
 
-    <div id="modal-step-4" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-      <div class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white">
-        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">04. Módulos de Capacitação</h3>
-        <p class="text-xs text-slate-300">Envie treinamentos padronizados diretamente no WhatsApp. Garanta que toda a equipe siga exatamente o mesmo padrão de excelência.</p>
-        <button onclick="closeModal('modal-step-4')" class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase">Fechar ⚡</button>
+    <div
+      id="modal-step-4"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+    >
+      <div
+        class="bg-[#0b1322] border-2 border-agileBlue rounded-3xl max-w-xl w-full p-6 space-y-4 text-white"
+      >
+        <h3 class="font-serif font-black text-xl text-agileBlue uppercase">
+          04. Módulos de Capacitação
+        </h3>
+        <p class="text-xs text-slate-300">
+          Envie treinamentos padronizados diretamente no WhatsApp. Garanta que
+          toda a equipe siga exatamente o mesmo padrão de excelência.
+        </p>
+        <button
+          onclick="closeModal('modal-step-4')"
+          class="w-full py-3 bg-agileBlue text-white font-bold rounded-xl text-xs uppercase"
+        >
+          Fechar ⚡
+        </button>
       </div>
     </div>
 
@@ -1172,7 +1464,8 @@
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300">
           <p class="text-sm text-white font-semibold">
-            Sua empresa tem total autonomia e flexibilidade para escolher o que é respondido no WhatsApp!
+            Sua empresa tem total autonomia e flexibilidade para escolher o que
+            é respondido no WhatsApp!
           </p>
           <div
             class="bg-[#030712] p-4 rounded-xl border border-slate-800 space-y-3"
@@ -1187,15 +1480,22 @@
                 <strong class="text-white"
                   >Opção A (Atualização Própria do RH / CRM):</strong
                 >
-                O próprio profissional de RH da sua empresa acessa um painel simples ou planilha e atualiza escalas, avisos e regras em menos de 1 minuto.
+                O próprio profissional de RH da sua empresa acessa um painel
+                simples ou planilha e atualiza escalas, avisos e regras em menos
+                de 1 minuto.
               </li>
               <li>
-                <strong class="text-white">Opção B (Suporte Fluxus):</strong> O RH envia o novo conteúdo em texto ou áudio direto para o nosso suporte no WhatsApp e nós atualizamos o motor do n8n imediatamente para você.
+                <strong class="text-white">Opção B (Suporte Fluxus):</strong> O
+                RH envia o novo conteúdo em texto ou áudio direto para o nosso
+                suporte no WhatsApp e nós atualizamos o motor do n8n
+                imediatamente para você.
               </li>
             </ul>
           </div>
           <p class="text-xs text-slate-400">
-            Dessa forma, as informações sobre a folha de pagamento, holerites, trocas de turno e atestados continuam sempre corretas sem exigir esforço técnico do seu time.
+            Dessa forma, as informações sobre a folha de pagamento, holerites,
+            trocas de turno e atestados continuam sempre corretas sem exigir
+            esforço técnico do seu time.
           </p>
         </div>
         <button
@@ -1229,13 +1529,24 @@
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300">
           <p class="text-sm text-white font-semibold">
-            Com as ocorrências repetitivas resolvidas pela tecnologia no WhatsApp, o seu RH ganha tempo para aplicar ações reais de valorização do cliente interno:
+            Com as ocorrências repetitivas resolvidas pela tecnologia no
+            WhatsApp, o seu RH ganha tempo para aplicar ações reais de
+            valorização do cliente interno:
           </p>
           <ul class="list-disc pl-5 space-y-2 text-xs text-slate-300">
-            <li>Reuniões presenciais de feedback e escuta ativa com colaboradores.</li>
-            <li>Programas de integração e celebração de aniversariantes do mês.</li>
-            <li>Acompanhamento de adaptação de novos funcionários após o onboarding.</li>
-            <li>Pausas de bem-estar e alinhamento de plano de carreira individual.</li>
+            <li>
+              Reuniões presenciais de feedback e escuta ativa com colaboradores.
+            </li>
+            <li>
+              Programas de integração e celebração de aniversariantes do mês.
+            </li>
+            <li>
+              Acompanhamento de adaptação de novos funcionários após o
+              onboarding.
+            </li>
+            <li>
+              Pausas de bem-estar e alinhamento de plano de carreira individual.
+            </li>
           </ul>
           <div
             class="bg-[#030712] p-4 rounded-xl border border-slate-800 space-y-2"
@@ -1244,7 +1555,8 @@
               Nós nos colocamos à disposição para estruturar a sua tecnologia!
             </p>
             <p class="text-xs text-slate-400">
-              A escolha dos módulos adicionais e da Landing Page de Onboarding é feita de acordo com o plano ideal para o tamanho da sua empresa.
+              A escolha dos módulos adicionais e da Landing Page de Onboarding é
+              feita de acordo com o plano ideal para o tamanho da sua empresa.
             </p>
           </div>
         </div>
@@ -1282,10 +1594,22 @@
             Como nossa ferramenta ajuda sua empresa no processo seletivo:
           </p>
           <ul class="list-disc pl-5 space-y-2 text-xs text-slate-300">
-            <li>O robô na WhatsApp Cloud API recebe o currículo do candidato 24 horas por dia.</li>
-            <li>Faz perguntas qualificatórias básicas via n8n (experiência, bairro, disponibilidade).</li>
-            <li>Organiza as respostas em um banco de talentos limpo no seu CRM para o RH analisar.</li>
-            <li>A decisão da contratação e a entrevista presencial continuam sendo 100% da sua empresa.</li>
+            <li>
+              O robô na WhatsApp Cloud API recebe o currículo do candidato 24
+              horas por dia.
+            </li>
+            <li>
+              Faz perguntas qualificatórias básicas via n8n (experiência,
+              bairro, disponibilidade).
+            </li>
+            <li>
+              Organiza as respostas em um banco de talentos limpo no seu CRM
+              para o RH analisar.
+            </li>
+            <li>
+              A decisão da contratação e a entrevista presencial continuam sendo
+              100% da sua empresa.
+            </li>
           </ul>
         </div>
         <button
@@ -1319,22 +1643,47 @@
           </button>
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300">
-          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <h4 class="font-black text-white uppercase text-sm">
+            📋 Entregáveis:
+          </h4>
           <ul class="list-disc pl-5 space-y-1">
-            <li>Central de Tira-dúvidas de Colaboradores no WhatsApp para ocorrências fáceis.</li>
-            <li>Tecnologia de captação automática de currículos e banco de talentos no WhatsApp.</li>
-            <li>Desenvolvimento da Landing Page de Onboarding personalizada para a sua empresa.</li>
+            <li>
+              Central de Tira-dúvidas de Colaboradores no WhatsApp para
+              ocorrências fáceis.
+            </li>
+            <li>
+              Tecnologia de captação automática de currículos e banco de
+              talentos no WhatsApp.
+            </li>
+            <li>
+              Desenvolvimento da Landing Page de Onboarding personalizada para a
+              sua empresa.
+            </li>
           </ul>
-          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
-          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-            <p>✔ Recrutamento | Seleção | Treinamento pelo WhatsApp Cloud API.</p>
-            <p>✔ Atendimento de dúvidas frequentes do colaborador ativo no WhatsApp.</p>
-            <p>✔ Recebimento de currículos testado com envio das informações ao CRM/RH.</p>
-            <p>✔ Landing Page de Onboarding desenvolvida e validada pelo cliente.</p>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">
+            ✅ Critérios de Aceite:
+          </h4>
+          <div
+            class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1"
+          >
+            <p>
+              ✔ Recrutamento | Seleção | Treinamento pelo WhatsApp Cloud API.
+            </p>
+            <p>
+              ✔ Atendimento de dúvidas frequentes do colaborador ativo no
+              WhatsApp.
+            </p>
+            <p>
+              ✔ Recebimento de currículos testado com envio das informações ao
+              CRM/RH.
+            </p>
+            <p>
+              ✔ Landing Page de Onboarding desenvolvida e validada pelo cliente.
+            </p>
           </div>
         </div>
         <a
-          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20RH."
+          href="https://wa.me/5512982827603?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20RH."
           target="_blank"
           class="block text-center w-full py-4 bg-indigo-600 text-white font-black uppercase rounded-xl hover:bg-indigo-500 transition"
           >Consultar no WhatsApp ⚡</a
@@ -1363,20 +1712,39 @@
           </button>
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300">
-          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <h4 class="font-black text-white uppercase text-sm">
+            📋 Entregáveis:
+          </h4>
           <ul class="list-disc pl-5 space-y-1">
-            <li>Padronização das orientações para recepção, camareiras e governança no WhatsApp.</li>
-            <li>Respostas automáticas para regras de check-in, horários de café e normas internas.</li>
-            <li>Página de Onboarding para recepcionistas e equipe da hotelaria.</li>
+            <li>
+              Padronização das orientações para recepção, camareiras e
+              governança no WhatsApp.
+            </li>
+            <li>
+              Respostas automáticas para regras de check-in, horários de café e
+              normas internas.
+            </li>
+            <li>
+              Página de Onboarding para recepcionistas e equipe da hotelaria.
+            </li>
           </ul>
-          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
-          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-            <p>✔ Guia de conduta da pousada acessível pelo time operacional no WhatsApp.</p>
-            <p>✔ Respostas automáticas de procedimentos validadas pela gestão.</p>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">
+            ✅ Critérios de Aceite:
+          </h4>
+          <div
+            class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1"
+          >
+            <p>
+              ✔ Guia de conduta da pousada acessível pelo time operacional no
+              WhatsApp.
+            </p>
+            <p>
+              ✔ Respostas automáticas de procedimentos validadas pela gestão.
+            </p>
           </div>
         </div>
         <a
-          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20Hotel."
+          href="https://wa.me/5512982827603?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20Hotel."
           target="_blank"
           class="block text-center w-full py-4 bg-yellow-500 text-slate-950 font-black uppercase rounded-xl hover:bg-yellow-400 transition"
           >Consultar no WhatsApp ⚡</a
@@ -1405,20 +1773,41 @@
           </button>
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300">
-          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <h4 class="font-black text-white uppercase text-sm">
+            📋 Entregáveis:
+          </h4>
           <ul class="list-disc pl-5 space-y-1">
-            <li>Tecnologia para captação e contratação do pessoal de salão (garçons, cumins) e cozinha.</li>
-            <li>Padronização de horários de turno, regras de higiene e checklists no WhatsApp.</li>
-            <li>Landing Page de Onboarding e treinamento de recepção para a brigada.</li>
+            <li>
+              Tecnologia para captação e contratação do pessoal de salão
+              (garçons, cumins) e cozinha.
+            </li>
+            <li>
+              Padronização de horários de turno, regras de higiene e checklists
+              no WhatsApp.
+            </li>
+            <li>
+              Landing Page de Onboarding e treinamento de recepção para a
+              brigada.
+            </li>
           </ul>
-          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
-          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-            <p>✔ Canal de captação de currículos de salão/cozinha ativo no WhatsApp.</p>
-            <p>✔ Manual de boas práticas da casa acessível pelo time no próprio celular.</p>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">
+            ✅ Critérios de Aceite:
+          </h4>
+          <div
+            class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1"
+          >
+            <p>
+              ✔ Canal de captação de currículos de salão/cozinha ativo no
+              WhatsApp.
+            </p>
+            <p>
+              ✔ Manual de boas práticas da casa acessível pelo time no próprio
+              celular.
+            </p>
           </div>
         </div>
         <a
-          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20A%26B."
+          href="https://wa.me/5512982827603?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20A%26B."
           target="_blank"
           class="block text-center w-full py-4 bg-orange-600 text-white font-black uppercase rounded-xl hover:bg-orange-500 transition"
           >Consultar no WhatsApp ⚡</a
@@ -1447,19 +1836,37 @@
           </button>
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300">
-          <h4 class="font-black text-white uppercase text-sm">📋 Entregáveis:</h4>
+          <h4 class="font-black text-white uppercase text-sm">
+            📋 Entregáveis:
+          </h4>
           <ul class="list-disc pl-5 space-y-1">
-            <li>Padronização do protocolo de atendimento para recepcionistas e secretárias no WhatsApp.</li>
-            <li>Agendamento automatizado de consultas com lembretes para evitar faltas de pacientes.</li>
+            <li>
+              Padronização do protocolo de atendimento para recepcionistas e
+              secretárias no WhatsApp.
+            </li>
+            <li>
+              Agendamento automatizado de consultas com lembretes para evitar
+              faltas de pacientes.
+            </li>
           </ul>
-          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">✅ Critérios de Aceite:</h4>
-          <div class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-            <p>✔ Protocolo de recepção médica/odontológica validado no WhatsApp da equipe.</p>
-            <p>✔ Agendamento automático e lembretes integrados com sucesso no CRM.</p>
+          <h4 class="font-black text-emerald-400 uppercase text-sm pt-2">
+            ✅ Critérios de Aceite:
+          </h4>
+          <div
+            class="bg-[#030712] p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 space-y-1"
+          >
+            <p>
+              ✔ Protocolo de recepção médica/odontológica validado no WhatsApp
+              da equipe.
+            </p>
+            <p>
+              ✔ Agendamento automático e lembretes integrados com sucesso no
+              CRM.
+            </p>
           </div>
         </div>
         <a
-          href="https://wa.me/551236006887?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20GO."
+          href="https://wa.me/5512982827603?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20planos%20do%20Fluxus%20GO."
           target="_blank"
           class="block text-center w-full py-4 bg-emerald-500 text-slate-950 font-black uppercase rounded-xl hover:bg-emerald-400 transition"
           >Consultar no WhatsApp ⚡</a
@@ -1489,19 +1896,45 @@
           </button>
         </div>
         <div class="space-y-4 text-xs sm:text-sm text-slate-300 text-left">
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider">1. Proteção de Dados e LGPD</h4>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider">
+            1. Proteção de Dados e LGPD
+          </h4>
           <p class="text-xs leading-relaxed">
-            A <strong>FLUXUS TECNOLOGIA DA INFORMAÇÃO</strong> (CNPJ 18.647.981/0001-29) atua no tratamento de dados pessoais estritamente sob o consentimento dos titulares e em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Os dados coletados através do WhatsApp ou formulários (como nome, telefone e currículos) são utilizados exclusivamente para as finalidades de recrutamento, seleção e atendimento operacional solicitados pela empresa contratante.
+            A <strong>FLUXUS TECNOLOGIA DA INFORMAÇÃO</strong> (CNPJ
+            18.647.981/0001-29) atua no tratamento de dados pessoais
+            estritamente sob o consentimento dos titulares e em conformidade com
+            a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Os dados
+            coletados através do WhatsApp ou formulários (como nome, telefone e
+            currículos) são utilizados exclusivamente para as finalidades de
+            recrutamento, seleção e atendimento operacional solicitados pela
+            empresa contratante.
           </p>
 
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider">2. Isenção de Vínculo com a Meta Inc. (Disclaimer)</h4>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider">
+            2. Isenção de Vínculo com a Meta Inc. (Disclaimer)
+          </h4>
           <p class="text-xs leading-relaxed">
-            Este site e as soluções de software desenvolvidas pela Fluxus utilizam as APIs Oficiais em nuvem fornecidas pela Meta Platforms, Inc. No entanto, a Fluxus é uma empresa independente de engenharia e consultoria tecnológica e <strong>não possui vínculo societário, patrocínio ou representação direta com o WhatsApp Inc. ou Meta Platforms Inc.</strong> Todas as marcas "WhatsApp", "Meta" e logotipos correlatos são de propriedade exclusiva de seus respectivos titulares.
+            Este site e as soluções de software desenvolvidas pela Fluxus
+            utilizam as APIs Oficiais em nuvem fornecidas pela Meta Platforms,
+            Inc. No entanto, a Fluxus é uma empresa independente de engenharia e
+            consultoria tecnológica e
+            <strong
+              >não possui vínculo societário, patrocínio ou representação direta
+              com o WhatsApp Inc. ou Meta Platforms Inc.</strong
+            >
+            Todas as marcas "WhatsApp", "Meta" e logotipos correlatos são de
+            propriedade exclusiva de seus respectivos titulares.
           </p>
 
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider">3. Governança e Infraestrutura de Dados</h4>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider">
+            3. Governança e Infraestrutura de Dados
+          </h4>
           <p class="text-xs leading-relaxed">
-            Garantimos o isolamento das informações tratadas por meio de instâncias dedicadas e conexões encriptadas via HTTPS e TLS. Nossos clientes possuem total propriedade e controle sobre as chaves de API, banco de dados e dados cadastrais de seus colaboradores e candidatos.
+            Garantimos o isolamento das informações tratadas por meio de
+            instâncias dedicadas e conexões encriptadas via HTTPS e TLS. Nossos
+            clientes possuem total propriedade e controle sobre as chaves de
+            API, banco de dados e dados cadastrais de seus colaboradores e
+            candidatos.
           </p>
         </div>
         <button
@@ -1572,7 +2005,7 @@
                 onerror="
                   this.onerror = null;
                   this.src =
-                    'https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887';
+                    'https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/5512982827603';
                 "
               />
             </div>
@@ -1597,7 +2030,9 @@
               max-width: 380px;
             "
           >
-            Engenharia de Inteligência Operacional. Entregamos automação com n8n e WhatsApp Business Cloud API Oficial para agilizar processos B2B e cuidar do seu colaborador.
+            Engenharia de Inteligência Operacional. Entregamos automação com n8n
+            e WhatsApp Business Cloud API Oficial para agilizar processos B2B e
+            cuidar do seu colaborador.
           </p>
           <div
             style="
@@ -1637,7 +2072,7 @@
             "
           >
             <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/551236006887"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=85x85&data=https://wa.me/5512982827603"
               alt="QR Code WhatsApp"
               style="
                 width: 75px;
@@ -1703,7 +2138,7 @@
           >
             <div>
               TELEFONE / WHATSAPP:
-              <span style="color: #00e676">+55 12 3600-6887</span>
+              <span style="color: #00e676">+55 12 98282-7603</span>
             </div>
             <div>
               E-MAIL:
@@ -1727,7 +2162,8 @@
           color: #64748b;
         "
       >
-        © 2026 Fluxus. Todos os direitos reservados. Engenharia de Inteligência Operacional & Soluções Ágeis.
+        © 2026 Fluxus. Todos os direitos reservados. Engenharia de Inteligência
+        Operacional & Soluções Ágeis.
       </div>
     </footer>
 
